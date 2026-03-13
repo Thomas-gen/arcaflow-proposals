@@ -1,0 +1,170 @@
+{
+  "slug": "domenico-piccoli",
+  "client": "Domenico Piccoli",
+  "company": "PTK Advisory Group",
+  "service": "Marketing & Automation Strategy — Destination Wedding, Puglia",
+  "date": "2026-03-03",
+  "language": "it",
+  "challenges": [
+    {
+      "area": "Zero marketing strutturato",
+      "impact": "Un portfolio premium che non si vende da solo: leads che arrivano per passaparola, non per sistema. La crescita dipende dalla fortuna, non dalla strategia."
+    },
+    {
+      "area": "Commo configurato ma non attivato",
+      "impact": "Pipeline, Instagram e WhatsApp sono collegati, ma non lavorano insieme. Il CRM è uno strumento inutilizzato invece che un motore di acquisizione."
+    },
+    {
+      "area": "Database contatti inattivo",
+      "impact": "Numeri di telefono e WhatsApp di ex clienti e prospect seduti fermi. Una lista calda che non ha mai ricevuto una campagna strutturata."
+    },
+    {
+      "area": "Accountability diffusa = stagione persa",
+      "impact": "L'anno scorso: troppi riferimenti, nessun proprietario del risultato. Una stagione sprecata è un costo enorme in un business stagionale."
+    },
+    {
+      "area": "La finestra di booking per l'estate 2026 si chiude",
+      "impact": "I wedding planner UK/US stanno finalizzando il loro vendor roster adesso. Chi non è presente in queste conversazioni non esiste per questa stagione."
+    }
+  ],
+  "parts": [
+    {
+      "title": "Strategia & Posizionamento",
+      "items": [
+        {
+          "activity": "Definizione ICP — profilo cliente ideale B2B (wedding planner UK/US) e B2C (coppie)",
+          "benefit": "Sapere esattamente a chi parlare: messaggio giusto, canale giusto, stagione giusta"
+        },
+        {
+          "activity": "Customer journey mapping B2B: dal primo contatto planner → venue confermata",
+          "benefit": "Capire ogni punto di contatto e dove i lead si perdono oggi"
+        },
+        {
+          "activity": "Selezione del front-end offer: quale servizio guida la conversazione",
+          "benefit": "Non disperdere il budget su tutti i prodotti — partire con quello che converte meglio nel mercato UK/US"
+        },
+        {
+          "activity": "Strategia canali: WhatsApp B2B, Instagram B2C, Meta ads — priorità e sequenza",
+          "benefit": "Un piano chiaro su dove investire primo, secondo e terzo — nessuna dispersione"
+        }
+      ]
+    },
+    {
+      "title": "Attivazione Commo CRM",
+      "items": [
+        {
+          "activity": "Audit e ristrutturazione pipeline (stage, trigger di automazione, tagging per fonte lead)",
+          "benefit": "Il CRM inizia a lavorare per voi invece di stare fermo"
+        },
+        {
+          "activity": "Configurazione tracciamento per fonte lead",
+          "benefit": "Visibilità completa: sapere quale canale porta i lead migliori e quanto costa acquisirli (CPL reale)"
+        },
+        {
+          "activity": "Ottimizzazione integrazione Instagram DM → Commo",
+          "benefit": "Ogni messaggio su Instagram arriva automaticamente in pipeline, nessun lead perso manualmente"
+        },
+        {
+          "activity": "Setup sequenze di risposta automatica per inquiries inbound",
+          "benefit": "Response time da ore a minuti — decisivo per coppie UK/US che contattano più fornitori in parallelo"
+        }
+      ]
+    },
+    {
+      "title": "WhatsApp Campaign & Lead Activation",
+      "items": [
+        {
+          "activity": "Segmentazione database contatti: ex clienti / lead caldi / prospect freddi",
+          "benefit": "Campagne diverse per audience diverse — messaggio più preciso, conversione più alta"
+        },
+        {
+          "activity": "Campagna WhatsApp di re-engagement su ex clienti e lead caldi (2026 bookings)",
+          "benefit": "Recuperare revenue da chi vi conosce già è il modo più economico per aprire la stagione"
+        },
+        {
+          "activity": "Sequenza di outreach WhatsApp per wedding planner UK/US",
+          "benefit": "Raggiungerli adesso, mentre costruiscono il loro vendor list, è il timing perfetto — tra 3 mesi sarà troppo tardi"
+        },
+        {
+          "activity": "Copywriting messaggi (tone of voice premium, rivolto al mercato UK/US)",
+          "benefit": "Messaggi che suonano professionali e attraenti per un pubblico anglofono — non una traduzione, una comunicazione strategica"
+        }
+      ]
+    },
+    {
+      "title": "Reporting & Ottimizzazione",
+      "items": [
+        {
+          "activity": "Dashboard KPI su Commo (leads per fonte, tasso di conversione, response time, stato pipeline)",
+          "benefit": "Vedere in tempo reale cosa funziona — non lavorare alla cieca durante la stagione più importante"
+        },
+        {
+          "activity": "Framework di ottimizzazione mensile: cosa monitorare, quando aggiustare",
+          "benefit": "Non consegniamo solo il sistema — consegniamo come leggerlo e migliorarlo nel tempo"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Parte 1: Strategia & Posizionamento", "duration": "3–4 giorni" },
+    { "phase": "Parte 2: Attivazione Commo CRM", "duration": "5–7 giorni" },
+    { "phase": "Parte 3: WhatsApp Campaign & Automazioni", "duration": "4–5 giorni" },
+    { "phase": "Parte 4: Dashboard, QA & Consegna", "duration": "2–3 giorni" },
+    { "phase": "Totale (Go-Live)", "duration": "~ 2–3 settimane" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "€2,900",
+    "roi_framing": "Una prenotazione da destination wedding vale mediamente €5,000–20,000+. Il sistema ripaga l'investimento con un singolo booking. Il resto della stagione è margine.",
+    "items": [
+      { "deliverable": "Parte 1: Strategia & Posizionamento", "price": null },
+      { "deliverable": "Parte 2: Attivazione Commo CRM", "price": null },
+      { "deliverable": "Parte 3: WhatsApp Campaign & Automazioni", "price": null },
+      { "deliverable": "Parte 4: Dashboard & Reporting", "price": null }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "Template di outreach per fotografi & videomaker",
+      "detail": "I professionisti visivi che lavorano ai vostri eventi sono un canale referral naturale verso UK/US — un messaggio già pronto per attivarlo"
+    },
+    {
+      "bonus": "2 settimane di ottimizzazione post-consegna",
+      "detail": "Analisi dei primi risultati reali per aggiustare messaggi, sequenze e timing prima del picco stagionale"
+    },
+    {
+      "bonus": "Launch Rate",
+      "detail": "Sconto €300 applicato a questo primo progetto"
+    }
+  ],
+  "final_total": "€2,600",
+  "next_steps": [
+    "Conferma — Accettazione formale della proposta e dello scope",
+    "Acconto — Pagamento concordato per avvio immediato",
+    "Onboarding — Accesso a Commo, WhatsApp Business Manager, Instagram Business Account e Facebook Ads per iniziare il setup",
+    "Kick-off call — 30 minuti per allinearsi su ICP, front-end offer e priorità prima del Giorno 1"
+  ],
+  "terms": [
+    {
+      "area": "Pagamento",
+      "detail": "Pagamento anticipato per progetti sotto €5,000"
+    },
+    {
+      "area": "Scope",
+      "detail": "Include tutto quanto descritto nelle Parti 1–4. Escluso: gestione ads (budget pubblicitario a carico del cliente), produzione contenuti video/foto, attività fuori scope richieste dopo l'inizio del progetto"
+    },
+    {
+      "area": "Supporto post-consegna",
+      "detail": "Fix e ottimizzazioni inclusi per 14 giorni post-consegna (3 round di revisione). Richieste fuori scope quotate separatamente"
+    },
+    {
+      "area": "Proprietà",
+      "detail": "Tutti i sistemi, automazioni e campagne sono configurati negli account del cliente e rimangono di sua proprietà. Nessun lock-in"
+    },
+    {
+      "area": "Prerequisiti",
+      "detail": "Accesso a Commo, WhatsApp Business, Instagram Business e Meta Business Manager necessario prima dell'inizio del progetto"
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
