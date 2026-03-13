@@ -16,7 +16,7 @@ export default function TimelineSlide({ data }: Props) {
     <div className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16">
       <div className="w-full max-w-3xl">
         <div className="text-xs tracking-widest uppercase mb-3" style={{ color: "#c9a84c" }}>
-          03
+          04
         </div>
         <h2 className="text-3xl font-light mb-10" style={{ color: "#f5f5f5", letterSpacing: "-0.01em" }}>
           {heading}

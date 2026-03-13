@@ -56,6 +56,17 @@ export interface Term {
   detail: string;
 }
 
+export interface ProblemChannel {
+  name: string;
+  description: string;
+}
+
+export interface ProblemSection {
+  headline: string;
+  body: string;
+  channels?: ProblemChannel[];
+}
+
 export interface ProposalData {
   slug: string;
   client: string;
@@ -64,6 +75,7 @@ export interface ProposalData {
   date: string;
   language: "en" | "it";
   challenges: Challenge[];
+  problem?: ProblemSection;
   parts: Part[];
   timeline: TimelinePhase[];
   investment: Investment;
