@@ -7,60 +7,66 @@ interface Props {
 export default function ApproachSlide({ data }: Props) {
   const a = data.approach!;
   const heading = data.language === "it" ? "Il Nostro Approccio" : "Our Approach";
+  const frameLabel = data.language === "it" ? "STRATEGIA" : "STRATEGY";
+  const overviewLabel = data.language === "it" ? "PANORAMICA" : "OVERVIEW";
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16">
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16 overflow-y-auto"
+      style={{ zIndex: 1, position: "relative" }}
+    >
       <div className="w-full max-w-3xl">
-        <div className="text-xs tracking-widest uppercase mb-3" style={{ color: "#c9a84c" }}>
-          02
-        </div>
+        <span className="frame-label">{frameLabel}</span>
         <h2
-          className="text-3xl font-light mb-8"
-          style={{ color: "#f5f5f5", letterSpacing: "-0.01em" }}
+          style={{
+            fontSize: "clamp(22px, 2.5vw, 32px)",
+            fontWeight: 800,
+            color: "#1a1a2e",
+            marginBottom: "24px",
+            letterSpacing: "-0.01em",
+          }}
         >
           {heading}
         </h2>
 
-        {/* Body */}
-        <div
-          className="text-sm leading-relaxed mb-8 whitespace-pre-line"
-          style={{
-            color: "#aaa",
-            borderLeft: "2px solid #c9a84c44",
-            paddingLeft: "20px",
-            fontSize: "15px",
-            lineHeight: "1.8",
-          }}
-        >
-          {a.body}
+        {/* Body text in miro frame */}
+        <div className="miro-frame" style={{ marginBottom: "24px" }}>
+          <div className="miro-frame-title">{overviewLabel}</div>
+          <p
+            style={{
+              fontSize: "14px",
+              color: "#444",
+              lineHeight: 1.75,
+              whiteSpace: "pre-line",
+            }}
+          >
+            {a.body}
+          </p>
         </div>
 
-        {/* Optional points */}
+        {/* Channel / strategy points */}
         {a.points && a.points.length > 0 && (
-          <div className="flex flex-col gap-3">
+          <div className="g2">
             {a.points.map((p, i) => (
               <div
                 key={i}
-                className="flex items-start gap-4 px-5 py-4 rounded-xl"
-                style={{ background: "#111", border: "1px solid #1e1e1e" }}
+                className="flow-step"
+                style={{ textAlign: "left", padding: "18px" }}
               >
+                <div className="step-num">{i + 1}</div>
                 <div
-                  className="w-5 h-5 rounded-full flex items-center justify-center text-xs flex-shrink-0 mt-0.5 font-bold"
                   style={{
-                    background: "#c9a84c22",
-                    color: "#c9a84c",
-                    border: "1px solid #c9a84c44",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    color: "#1a1a2e",
+                    marginTop: "10px",
+                    marginBottom: "6px",
                   }}
                 >
-                  {i + 1}
+                  {p.label}
                 </div>
-                <div>
-                  <div className="text-sm font-medium mb-0.5" style={{ color: "#e0e0e0" }}>
-                    {p.label}
-                  </div>
-                  <div className="text-xs leading-relaxed" style={{ color: "#666" }}>
-                    {p.description}
-                  </div>
+                <div style={{ fontSize: "12px", color: "#555", lineHeight: 1.5 }}>
+                  {p.description}
                 </div>
               </div>
             ))}

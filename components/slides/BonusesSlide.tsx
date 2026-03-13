@@ -4,67 +4,58 @@ interface Props {
   data: ProposalData;
 }
 
+const BONUS_COLORS = ["sticky-green", "sticky-blue", "sticky-orange", "sticky-purple"];
+
 export default function BonusesSlide({ data }: Props) {
   const heading = data.language === "it" ? "Bonus Inclusi" : "Bonuses Included";
-  const col1 = data.language === "it" ? "Bonus" : "Bonus";
-  const col2 = data.language === "it" ? "Dettaglio" : "Detail";
-  const finalLabel = data.language === "it" ? "Totale Finale" : "Final Total";
-  const includedLabel = data.language === "it" ? "bonus inclusi" : "bonuses included";
+  const frameLabel = data.language === "it" ? "VALORE AGGIUNTO" : "ADDED VALUE";
+  const finalLabel =
+    data.language === "it" ? "TOTALE FINALE (CON BONUS)" : "FINAL TOTAL (INCL. BONUSES)";
+  const tagline =
+    data.language === "it"
+      ? "Una sola prenotazione ripaga l'intero investimento."
+      : "One booking covers the entire investment.";
+
+  const gridClass = data.bonuses.length <= 2 ? "g2" : "g3";
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16">
-      <div className="w-full max-w-3xl">
-        <div className="text-xs tracking-widest uppercase mb-3" style={{ color: "#c9a84c" }}>
-          06
-        </div>
-        <h2 className="text-3xl font-light mb-8" style={{ color: "#f5f5f5", letterSpacing: "-0.01em" }}>
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16 overflow-y-auto"
+      style={{ zIndex: 1, position: "relative" }}
+    >
+      <div className="w-full max-w-4xl">
+        <span className="frame-label">{frameLabel}</span>
+        <h2
+          style={{
+            fontSize: "clamp(22px, 2.5vw, 32px)",
+            fontWeight: 800,
+            color: "#1a1a2e",
+            marginBottom: "24px",
+            letterSpacing: "-0.01em",
+          }}
+        >
           {heading}
         </h2>
 
-        <div className="rounded-xl overflow-hidden mb-8" style={{ border: "1px solid #1e1e1e" }}>
-          <div className="grid grid-cols-[2fr_3fr] px-5 py-3" style={{ background: "#1a1a1a" }}>
-            <div className="text-xs tracking-widest uppercase" style={{ color: "#666" }}>{col1}</div>
-            <div className="text-xs tracking-widest uppercase" style={{ color: "#666" }}>{col2}</div>
-          </div>
+        {/* Bonus sticky cards */}
+        <div className={gridClass} style={{ marginBottom: "24px" }}>
           {data.bonuses.map((b, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-[2fr_3fr] px-5 py-4 gap-4"
-              style={{
-                background: i % 2 === 0 ? "#111" : "#0d0d0d",
-                borderTop: "1px solid #1a1a1a",
-              }}
-            >
-              <div className="text-sm font-medium flex items-start gap-2" style={{ color: "#e0e0e0" }}>
-                <span style={{ color: "#c9a84c" }}>✦</span>
-                {b.bonus}
-              </div>
-              <div className="text-sm leading-relaxed" style={{ color: "#888" }}>
-                {b.detail}
-              </div>
+            <div key={i} className={`sticky ${BONUS_COLORS[i % BONUS_COLORS.length]}`}>
+              <div className="sticky-title">✦ {b.bonus}</div>
+              <div className="sticky-text">{b.detail}</div>
             </div>
           ))}
         </div>
 
         {/* Final total */}
-        <div
-          className="flex items-center justify-between px-6 py-5 rounded-xl"
-          style={{
-            background: "linear-gradient(135deg, #1a1500 0%, #111 100%)",
-            border: "1px solid #3a3010",
-          }}
-        >
-          <div>
-            <div className="text-sm font-semibold mb-0.5" style={{ color: "#f5f5f5" }}>
-              {finalLabel}
-            </div>
-            <div className="text-xs" style={{ color: "#666" }}>
-              ({includedLabel})
-            </div>
-          </div>
-          <div className="text-3xl font-light" style={{ color: "#c9a84c" }}>
-            {data.final_total}
-          </div>
+        <div className="roi-box" style={{ marginBottom: "16px" }}>
+          <div className="roi-num">{data.final_total}</div>
+          <div className="roi-label">{finalLabel}</div>
+        </div>
+
+        {/* Handwritten callout */}
+        <div className="callout">
+          <span className="callout-text">{tagline}</span>
         </div>
       </div>
     </div>

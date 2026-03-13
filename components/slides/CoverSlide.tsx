@@ -10,50 +10,78 @@ export default function CoverSlide({ data }: Props) {
     { day: "numeric", month: "long", year: "numeric" }
   );
 
+  const propLabel =
+    data.language === "it" ? "PROPOSTA DI IMPLEMENTAZIONE" : "IMPLEMENTATION PROPOSAL";
+  const confidential =
+    data.language === "it" ? "Riservato & Confidenziale" : "Private & Confidential";
+  const dateLabel = data.language === "it" ? "DATA PROPOSTA" : "DATE";
+
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8">
-      {/* Arcaflow wordmark */}
-      <div
-        className="mb-10 text-xs tracking-[0.3em] uppercase"
-        style={{ color: "#c9a84c" }}
-      >
-        Arcaflow AI
-      </div>
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-8 relative"
+      style={{ zIndex: 1 }}
+    >
+      <div className="w-full max-w-2xl text-center">
+        {/* Frame label */}
+        <span className="frame-label">{propLabel}</span>
 
-      {/* Divider */}
-      <div className="w-12 h-px mb-10" style={{ background: "#2a2a2a" }} />
+        {/* Title */}
+        <h1
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "clamp(32px, 4vw, 54px)",
+            fontWeight: 800,
+            color: "#1a1a2e",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            marginBottom: "12px",
+          }}
+        >
+          {data.company}
+        </h1>
 
-      {/* Headline */}
-      <h1
-        className="text-4xl md:text-5xl font-light text-center mb-3 leading-tight"
-        style={{ color: "#f5f5f5", letterSpacing: "-0.02em" }}
-      >
-        {data.language === "it" ? "Proposta di Implementazione" : "Implementation Proposal"}
-      </h1>
+        {/* Client name (if different from company) */}
+        {data.client !== data.company && (
+          <p style={{ fontSize: "18px", color: "#888", marginBottom: "8px" }}>
+            {data.client}
+          </p>
+        )}
 
-      <p
-        className="text-lg text-center mb-10"
-        style={{ color: "#888", fontWeight: 300 }}
-      >
-        {data.company}
-        {data.company && data.client !== data.company ? ` · ${data.client}` : ""}
-      </p>
+        {/* Service */}
+        <p
+          style={{
+            fontSize: "15px",
+            color: "#555",
+            marginBottom: "36px",
+            lineHeight: 1.5,
+            maxWidth: "480px",
+            margin: "12px auto 36px",
+          }}
+        >
+          {data.service}
+        </p>
 
-      {/* Service tag */}
-      <div
-        className="px-5 py-2 rounded-full text-sm mb-12"
-        style={{
-          background: "#111",
-          border: "1px solid #2a2a2a",
-          color: "#aaa",
-        }}
-      >
-        {data.service}
-      </div>
+        {/* Pills row */}
+        <div className="pills-row" style={{ justifyContent: "center" }}>
+          <div className="pill hl">
+            <div className="pill-val">Arcaflow AI</div>
+            <div className="pill-lbl">PARTNER</div>
+          </div>
+          <div className="pill">
+            <div
+              className="pill-val"
+              style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px" }}
+            >
+              {formatted}
+            </div>
+            <div className="pill-lbl">{dateLabel}</div>
+          </div>
+        </div>
 
-      {/* Date */}
-      <div className="text-sm" style={{ color: "#555" }}>
-        {formatted}
+        {/* Confidential callout */}
+        <div className="callout" style={{ maxWidth: "400px", margin: "24px auto 0" }}>
+          <span className="callout-text">{confidential}</span>
+        </div>
       </div>
     </div>
   );

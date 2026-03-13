@@ -8,74 +8,85 @@ interface Props {
 export default function SolutionSlide({ data }: Props) {
   const [activeTab, setActiveTab] = useState(0);
   const heading = data.language === "it" ? "Soluzioni & Consegne" : "Solution & Deliverables";
+  const frameLabel = data.language === "it" ? "DELIVERABLES" : "DELIVERABLES";
   const col1 = data.language === "it" ? "Attività" : "Activity";
   const col2 = data.language === "it" ? "Beneficio" : "Benefit";
+  const partLabel = data.language === "it" ? "P" : "P";
 
   const part = data.parts[activeTab];
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16">
-      <div className="w-full max-w-4xl flex flex-col h-full justify-center">
-        {/* Section label */}
-        <div className="text-xs tracking-widest uppercase mb-3" style={{ color: "#c9a84c" }}>
-          03
-        </div>
-        <h2 className="text-3xl font-light mb-6" style={{ color: "#f5f5f5", letterSpacing: "-0.01em" }}>
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16 overflow-y-auto"
+      style={{ zIndex: 1, position: "relative" }}
+    >
+      <div className="w-full max-w-4xl">
+        <span className="frame-label">{frameLabel}</span>
+        <h2
+          style={{
+            fontSize: "clamp(22px, 2.5vw, 32px)",
+            fontWeight: 800,
+            color: "#1a1a2e",
+            marginBottom: "20px",
+            letterSpacing: "-0.01em",
+          }}
+        >
           {heading}
         </h2>
 
         {/* Tab bar */}
-        <div className="flex gap-2 mb-6 flex-wrap">
+        <div style={{ display: "flex", gap: "8px", marginBottom: "20px", flexWrap: "wrap" }}>
           {data.parts.map((p, i) => (
             <button
               key={i}
               onClick={() => setActiveTab(i)}
-              className="px-4 py-1.5 rounded-full text-sm transition-all"
               style={{
-                background: activeTab === i ? "#c9a84c" : "#111",
-                color: activeTab === i ? "#0a0a0a" : "#666",
-                border: `1px solid ${activeTab === i ? "#c9a84c" : "#2a2a2a"}`,
+                padding: "6px 14px",
+                borderRadius: "6px",
+                fontSize: "12px",
+                fontWeight: activeTab === i ? 700 : 500,
                 cursor: "pointer",
-                fontWeight: activeTab === i ? 600 : 400,
+                transition: "all 0.2s",
+                background: activeTab === i ? "#2d6a4f" : "#fff",
+                color: activeTab === i ? "#fff" : "#555",
+                border: `2px solid ${activeTab === i ? "#2d6a4f" : "#e0dbd4"}`,
+                fontFamily: "Inter, sans-serif",
               }}
             >
-              {data.language === "it" ? `Parte ${i + 1}` : `Part ${i + 1}`}
-              <span className="ml-1.5 opacity-60 text-xs">{p.title}</span>
+              {partLabel}{i + 1}
+              <span
+                style={{
+                  marginLeft: "6px",
+                  opacity: 0.75,
+                  fontWeight: 400,
+                  fontSize: "11px",
+                }}
+              >
+                {p.title}
+              </span>
             </button>
           ))}
         </div>
 
-        {/* Part title */}
-        <div className="mb-4 text-sm font-medium" style={{ color: "#c9a84c" }}>
-          {part.title}
-        </div>
-
-        {/* Table */}
-        <div className="rounded-xl overflow-hidden" style={{ border: "1px solid #1e1e1e" }}>
-          <div
-            className="grid grid-cols-[2fr_3fr] px-5 py-3"
-            style={{ background: "#1a1a1a" }}
-          >
-            <div className="text-xs tracking-widest uppercase" style={{ color: "#666" }}>{col1}</div>
-            <div className="text-xs tracking-widest uppercase" style={{ color: "#666" }}>{col2}</div>
-          </div>
-          {part.items.map((item, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-[2fr_3fr] px-5 py-4 gap-4"
-              style={{
-                background: i % 2 === 0 ? "#111" : "#0d0d0d",
-                borderTop: "1px solid #1a1a1a",
-              }}
-            >
-              <div className="text-sm font-medium" style={{ color: "#e0e0e0" }}>
-                {item.activity}
-              </div>
-              <div className="text-sm leading-relaxed" style={{ color: "#888" }}>
-                {item.benefit}
-              </div>
-            </div>
-          ))}
+        {/* Part table in miro frame */}
+        <div className="miro-frame">
+          <div className="miro-frame-title">{part.title.toUpperCase()}</div>
+          <table className="prop-table">
+            <thead>
+              <tr>
+                <th>{col1}</th>
+                <th>{col2}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {part.items.map((item, i) => (
+                <tr key={i}>
+                  <td>{item.activity}</td>
+                  <td>{item.benefit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

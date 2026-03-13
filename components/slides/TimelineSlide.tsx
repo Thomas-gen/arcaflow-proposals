@@ -6,61 +6,60 @@ interface Props {
 
 export default function TimelineSlide({ data }: Props) {
   const heading = data.language === "it" ? "Tempistiche" : "Timeline";
-  const col1 = data.language === "it" ? "Fase" : "Phase";
-  const col2 = data.language === "it" ? "Durata Stimata" : "Estimated Duration";
+  const frameLabel = data.language === "it" ? "PIANO DI LAVORO" : "WORK PLAN";
 
   const total = data.timeline[data.timeline.length - 1];
   const phases = data.timeline.slice(0, -1);
 
+  const gridClass = phases.length <= 3 ? "g3" : "g4";
+
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16">
-      <div className="w-full max-w-3xl">
-        <div className="text-xs tracking-widest uppercase mb-3" style={{ color: "#c9a84c" }}>
-          04
-        </div>
-        <h2 className="text-3xl font-light mb-10" style={{ color: "#f5f5f5", letterSpacing: "-0.01em" }}>
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-6 md:px-16 py-16"
+      style={{ zIndex: 1, position: "relative" }}
+    >
+      <div className="w-full max-w-4xl">
+        <span className="frame-label">{frameLabel}</span>
+        <h2
+          style={{
+            fontSize: "clamp(22px, 2.5vw, 32px)",
+            fontWeight: 800,
+            color: "#1a1a2e",
+            marginBottom: "28px",
+            letterSpacing: "-0.01em",
+          }}
+        >
           {heading}
         </h2>
 
-        {/* Visual timeline */}
-        <div className="flex flex-col gap-0 mb-8">
+        {/* Phase cards */}
+        <div className={gridClass} style={{ marginBottom: "24px" }}>
           {phases.map((phase, i) => (
-            <div key={i} className="flex items-start gap-5">
-              {/* Line + dot */}
-              <div className="flex flex-col items-center pt-1">
-                <div
-                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                  style={{ background: "#c9a84c", boxShadow: "0 0 8px #c9a84c55" }}
-                />
-                {i < phases.length - 1 && (
-                  <div className="w-px flex-1 min-h-[32px]" style={{ background: "#2a2a2a" }} />
-                )}
+            <div key={i} className="flow-step">
+              <div className="step-num">{i + 1}</div>
+              <div className="step-text" style={{ marginTop: "8px" }}>
+                {phase.phase}
               </div>
-              {/* Content */}
-              <div className="pb-6">
-                <div className="text-sm font-medium mb-0.5" style={{ color: "#e0e0e0" }}>
-                  {phase.phase}
-                </div>
-                <div className="text-sm" style={{ color: "#555" }}>
-                  {phase.duration}
-                </div>
+              <div
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "11px",
+                  color: "#2d6a4f",
+                  marginTop: "8px",
+                  fontWeight: 700,
+                }}
+              >
+                {phase.duration}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Total */}
+        {/* Total box */}
         {total && (
-          <div
-            className="flex items-center justify-between px-5 py-4 rounded-xl"
-            style={{ background: "#111", border: "1px solid #2a2a2a" }}
-          >
-            <div className="text-sm font-semibold" style={{ color: "#c9a84c" }}>
-              {total.phase}
-            </div>
-            <div className="text-sm font-semibold" style={{ color: "#c9a84c" }}>
-              {total.duration}
-            </div>
+          <div className="roi-box">
+            <div className="roi-num">{total.duration}</div>
+            <div className="roi-label">{total.phase.toUpperCase()}</div>
           </div>
         )}
       </div>
