@@ -5,6 +5,19 @@
   "service": "Marketing & Automation Strategy — Destination Wedding, Puglia",
   "date": "2026-03-03",
   "language": "it",
+  "approach": {
+    "body": "Prima di costruire il sistema, la domanda chiave è: a chi vendiamo?\n\nL'analisi del mercato UK/US per il destination wedding in Puglia porta a una risposta chiara: il canale più rapido e ad alto LTV non sono le coppie — sono i wedding planner. Un singolo planner di Londra o New York vale 3–5 matrimoni l'anno: una relazione B2B = €15,000–50,000+ di valore ricorrente.\n\nLa strategia costruisce entrambi i canali in parallelo, con budget concentrato sul B2B nella fase iniziale e il B2C attivato subito dopo.",
+    "points": [
+      {
+        "label": "Canale Primario — B2B (Wedding Planner UK/US)",
+        "description": "I planner stanno costruendo il loro vendor list adesso, in marzo–aprile. Il canale più efficace: WhatsApp — la cultura business UK lo usa massicciamente — e Instagram DM, dove i migliori planner sono attivissimi."
+      },
+      {
+        "label": "Canale Secondario — B2C (Coppie UK/US)",
+        "description": "Meta ads targeting coppie che cercano destination wedding in Puglia. Funnel diretto: annuncio → landing → form → automazione Commo → booking call. Più costoso in CPL, ma genera inquiries dirette senza intermediari."
+      }
+    ]
+  },
   "challenges": [
     {
       "area": "Zero marketing strutturato",

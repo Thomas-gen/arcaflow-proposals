@@ -56,6 +56,16 @@ export interface Term {
   detail: string;
 }
 
+export interface ApproachPoint {
+  label: string;
+  description: string;
+}
+
+export interface Approach {
+  body: string;
+  points?: ApproachPoint[];
+}
+
 export interface ProposalData {
   slug: string;
   client: string;
@@ -64,6 +74,7 @@ export interface ProposalData {
   date: string;
   language: "en" | "it";
   challenges: Challenge[];
+  approach?: Approach;
   parts: Part[];
   timeline: TimelinePhase[];
   investment: Investment;
