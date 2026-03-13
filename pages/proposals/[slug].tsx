@@ -6,7 +6,6 @@ import { ProposalData } from "@/types/proposal";
 import SlideLayout from "@/components/SlideLayout";
 import CoverSlide from "@/components/slides/CoverSlide";
 import ChallengesSlide from "@/components/slides/ChallengesSlide";
-import ProblemSlide from "@/components/slides/ProblemSlide";
 import SolutionSlide from "@/components/slides/SolutionSlide";
 import TimelineSlide from "@/components/slides/TimelineSlide";
 import InvestmentSlide from "@/components/slides/InvestmentSlide";
@@ -21,7 +20,6 @@ export default function ProposalPage({ data }: Props) {
   const slides = [
     <CoverSlide key="cover" data={data} />,
     <ChallengesSlide key="challenges" data={data} />,
-    ...(data.problem ? [<ProblemSlide key="problem" data={data} />] : []),
     <SolutionSlide key="solution" data={data} />,
     <TimelineSlide key="timeline" data={data} />,
     <InvestmentSlide key="investment" data={data} />,

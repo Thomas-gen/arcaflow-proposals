@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default function ChallengesSlide({ data }: Props) {
-  const heading = data.language === "it" ? "Criticità Attuali" : "Current Challenges";
+  const heading = data.language === "it" ? "Il Problema" : "The Problem";
   const col1 = data.language === "it" ? "Area Critica" : "Critical Area";
   const col2 = data.language === "it" ? "Impatto Business" : "Business Impact";
 
