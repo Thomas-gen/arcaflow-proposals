@@ -1,0 +1,197 @@
+{
+  "slug": "chris-romazko",
+  "client": "Chris Romazko",
+  "company": "Daytona Beach Roofing",
+  "service": "AI Lead Recovery System — Meta Ads + GHL + Voice AI",
+  "date": "2026-03-14",
+  "language": "en",
+  "challenges": [
+    {
+      "area": "Shared leads (Angie's List)",
+      "impact": "Paying $300/lead then competing against 5–15 roofers for the same homeowner — only one wins, and Angie's profits regardless"
+    },
+    {
+      "area": "Zero exclusive inbound pipeline",
+      "impact": "100% dependent on one expensive shared source — no owned traffic, no organic, no system that generates leads without writing checks"
+    },
+    {
+      "area": "No speed-to-lead system",
+      "impact": "Lead conversion drops dramatically after just 5–10 minutes. Without instant follow-up, leads book whoever called first — not the best roofer"
+    },
+    {
+      "area": "10% conversion rate despite sat appointments",
+      "impact": "Quality appointments being lost with no structured nurture between quote and decision, and no automated estimate follow-up"
+    },
+    {
+      "area": "Facebook ads with zero conversions",
+      "impact": "$150/day running for two weeks with no results — not because Meta doesn't work, but because there's no system behind the lead when it arrives"
+    }
+  ],
+  "approach": {
+    "body": "Chris's business has a real edge: 48-hour job completion, on-site project management, premium materials, and an insurance-claim upsell angle most competitors miss. What's missing is a system that generates exclusive leads and works them the moment they come in — so the sales team only shows up to qualified, confirmed appointments.\n\nPhase 1 focuses on one thing: build the core lead engine and get it live. Meta ads generate exclusive leads in Chris's own account. The AI calls within 60 seconds, qualifies using the full roofing checklist, books the inspection, and follows up via SMS until it gets a yes or a firm no. Nothing falls through the cracks.",
+    "points": [
+      {
+        "label": "Owned Leads — Meta Ads",
+        "description": "Exclusive leads in your own ad account — not shared with competitors. You own the traffic and the relationship from the first click."
+      },
+      {
+        "label": "AI Speed-to-Lead",
+        "description": "An outbound voice agent calls within 60 seconds of form submission — at peak buying intent, before they've dialled anyone else. Every qualification question is asked automatically."
+      },
+      {
+        "label": "Automated Nurture",
+        "description": "AI SMS setter, appointment reminders, and estimate follow-ups keep leads warm at every stage — so nothing falls through the cracks between quote and signed job."
+      }
+    ]
+  },
+  "parts": [
+    {
+      "title": "Lead Infrastructure — Meta Ads + GHL",
+      "items": [
+        {
+          "activity": "GHL sub-account setup: pipeline, contact tagging, lead source tracking",
+          "benefit": "All leads flow into one owned system — no more competing for leads you already paid for"
+        },
+        {
+          "activity": "Meta ads campaign build: targeting, ad sets, creative strategy and ad copy",
+          "benefit": "Exclusive leads at buying intent — not recycled and sold to 15 competitors"
+        },
+        {
+          "activity": "Lead capture form optimised for roofing pre-qualification",
+          "benefit": "Filters lead quality before the AI even picks up the phone"
+        },
+        {
+          "activity": "Conversion tracking setup",
+          "benefit": "Know exactly which ads are generating booked appointments, not just clicks"
+        }
+      ]
+    },
+    {
+      "title": "AI Voice Agent — Qualification + Booking",
+      "items": [
+        {
+          "activity": "Outbound voice agent: calls the lead within 60 seconds of form submission",
+          "benefit": "At peak buying intent — before they've called anyone else"
+        },
+        {
+          "activity": "Custom qualification script: insurance status, roof age, skylights, gutters, slope, pool enclosures, deductible",
+          "benefit": "Asks every question you'd ask on-site — pre-qualified before the appointment hits your calendar"
+        },
+        {
+          "activity": "Calendar integration (Google Cal or JobNimbus calendar)",
+          "benefit": "Appointment booked directly — zero manual coordination"
+        },
+        {
+          "activity": "Human handoff trigger: escalates hot leads when a live conversation is needed",
+          "benefit": "AI qualifies, you close — the right division of labour"
+        }
+      ]
+    },
+    {
+      "title": "AI SMS Setter + Follow-up Nurture",
+      "items": [
+        {
+          "activity": "AI SMS conversation agent: responds to replies, handles objections, re-engages cold leads via text",
+          "benefit": "Captures leads that don't answer the phone — keeps the conversation alive until they book"
+        },
+        {
+          "activity": "Appointment reminders (SMS + call 24hrs and 2hrs before)",
+          "benefit": "Reduces no-shows — every drive to a property is one that actually sat"
+        },
+        {
+          "activity": "Post-estimate follow-up sequence (automated nudges when a quote goes quiet)",
+          "benefit": "Stops revenue falling through the cracks between quote and signed job"
+        },
+        {
+          "activity": "Re-engagement sequence for leads that didn't book on first contact",
+          "benefit": "Recovers leads that weren't ready the first time and keeps Daytona Beach Roofing top of mind"
+        }
+      ]
+    },
+    {
+      "title": "Reporting & Optimisation",
+      "items": [
+        {
+          "activity": "Performance dashboard: leads in, appointments booked, close rate, cost per booked appointment",
+          "benefit": "Full visibility into what the system is generating — no guessing, no black box"
+        },
+        {
+          "activity": "Ad performance monitoring and creative iteration",
+          "benefit": "Ads that aren't converting get replaced — budget goes to what's working"
+        },
+        {
+          "activity": "Monthly strategy check-in to review numbers and adjust",
+          "benefit": "Regular alignment keeps the system improving and ensures you always know what you're paying for"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Part 1: Lead Infrastructure", "duration": "1 week" },
+    { "phase": "Part 2: AI Voice Agent", "duration": "1–2 weeks" },
+    { "phase": "Part 3: AI SMS Setter & Sequences", "duration": "1 week" },
+    { "phase": "Part 4: Reporting, QA & Go-Live", "duration": "3–5 days" },
+    { "phase": "Total (Go-Live)", "duration": "~ 1 month" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "$5,500 setup + $2,200/month",
+    "roi_framing": "Ad spend billed directly by Meta — recommended $1,500–2,000/month to start. At a 10% close rate and $30K average job value, two closed jobs in the first month covers setup, retainer, and ad spend combined.",
+    "items": [
+      { "deliverable": "Part 1: Lead Infrastructure", "price": null },
+      { "deliverable": "Part 2: AI Voice Agent", "price": null },
+      { "deliverable": "Part 3: AI SMS Setter & Follow-up Nurture", "price": null },
+      { "deliverable": "Part 4: Reporting & Optimisation", "price": null },
+      { "deliverable": "One-time Setup", "price": "$5,500" },
+      { "deliverable": "Monthly Retainer", "price": "$2,200/month" }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "90-day performance review call",
+      "detail": "At the 90-day mark we review booked appointments, close rate, and ad performance together — and adjust strategy based on real data"
+    },
+    {
+      "bonus": "Competitor ad intelligence audit",
+      "detail": "Before launching, we analyse what other roofers in your market are running — so your creatives don't repeat what's already failing"
+    },
+    {
+      "bonus": "Launch Rate — 25% off standard pricing",
+      "detail": "Prices above reflect 25% off our standard rate ($7,300 setup + $2,900/month). Saving $1,800+ on this engagement"
+    }
+  ],
+  "final_total": "$5,500 setup + $2,200/month",
+  "next_steps": [
+    "Confirm — Formal acceptance of this proposal and scope",
+    "Payment — Setup fee due to begin build",
+    "Onboarding — Provide access to Meta Business Manager and calendar (Google Cal or JobNimbus)",
+    "Kick-off call — 30 minutes to align on qualifying questions, service area, and existing Facebook account before Day 1"
+  ],
+  "terms": [
+    {
+      "area": "Payment",
+      "detail": "Setup fee due upfront. Retainer billed monthly from go-live date"
+    },
+    {
+      "area": "Retainer term",
+      "detail": "Month-to-month after setup. 30-day written notice to cancel"
+    },
+    {
+      "area": "Scope",
+      "detail": "Covers Parts 1–4 as described. Excluded: ad spend (client's direct Meta expense), JobNimbus CRM integration (Phase 2 — quoted separately), content production (photos/video), changes outside agreed scope after project start"
+    },
+    {
+      "area": "Post-delivery support",
+      "detail": "Bug fixes and adjustments included for 14 days post-go-live (3 revision rounds). Change requests outside scope quoted separately"
+    },
+    {
+      "area": "Ownership",
+      "detail": "All systems built in client's GHL sub-account and Meta ad account. Arcaflow retains no access after retainer ends"
+    },
+    {
+      "area": "Prerequisites",
+      "detail": "Active Meta Business Manager, phone number for GHL, and calendar access required before project start. Missing access delays the start date"
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
