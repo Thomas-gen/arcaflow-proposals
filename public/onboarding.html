@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arcaflow AI — Client Onboarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --brand: #e51551;
+      --brand-light: #2a0a14;
+      --positive: #4ade80;
+      --positive-light: #0a2018;
+      --neutral: #3a3a3a;
+      --neutral-light: #1e1e1e;
+      --border: #2a2a2a;
+      --text: #e5e7eb;
+      --muted: #a3a3a3;
+      --card-bg: #1a1a1a;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, #333 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--border);
+      z-index: 100;
+    }
+    #progress-fill {
+      height: 100%;
+      background: var(--brand);
+      transition: width 0.4s ease;
+    }
+
+    /* Slide counter */
+    #slide-counter {
+      position: fixed; top: 20px; left: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 1px;
+      z-index: 100;
+    }
+
+    /* Nav dots */
+    #nav-dots {
+      position: fixed; right: 20px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 8px;
+      z-index: 100;
+    }
+
+    .nav-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .nav-dot.active { background: var(--brand); transform: scale(1.3); }
+    .nav-dot:hover { background: var(--brand); }
+
+    .nav-dot .dot-label {
+      position: absolute; right: 18px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px; white-space: nowrap;
+      background: #333; color: #e5e7eb;
+      padding: 3px 8px; border-radius: 4px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .nav-dot:hover .dot-label { opacity: 1; }
+
+    /* Keyboard hint */
+    #kbd-hint {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px; color: #555;
+      font-family: 'JetBrains Mono', monospace;
+      z-index: 100;
+    }
+
+    /* Drawing toolbar */
+    #draw-toolbar {
+      position: fixed; bottom: 24px; right: 24px;
+      display: flex; gap: 8px; z-index: 100;
+    }
+
+    .draw-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--card-bg);
+      cursor: pointer;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .draw-btn:hover { border-color: var(--brand); }
+    .draw-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+    /* Slides container */
+    #slides { position: fixed; inset: 0; z-index: 1; }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px 80px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateY(20px);
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .slide-inner { width: 100%; max-width: 1040px; }
+
+    .slide-canvas {
+      position: absolute; inset: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-canvas.draw-mode { pointer-events: all; cursor: crosshair; }
+
+    /* Typography */
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+
+    h3 { font-size: 16px; font-weight: 800; line-height: 1.3; }
+
+    p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    .accent { color: var(--brand); }
+    .green-text { color: var(--positive); }
+    .cursive { font-family: 'Caveat', cursive; font-size: 18px; color: var(--muted); }
+
+    /* Pills */
+    .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      border: 1.5px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    .pill.red { background: var(--brand-light); border-color: var(--brand); color: var(--brand); }
+    .pill.green { background: var(--positive-light); border-color: var(--positive); color: var(--positive); }
+    .pill.navy { background: #1a1a1a; border-color: #444; color: var(--muted); }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .card.red-border { border-color: var(--brand); }
+    .card.green-border { border-color: var(--positive); border-width: 2px; }
+
+    /* Step card */
+    .step-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .step-card:hover { border-color: #444; }
+
+    .step-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .step-num {
+      position: absolute;
+      top: 16px; right: 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--brand);
+      letter-spacing: 1px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .step-body {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .step-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: transparent;
+      width: fit-content;
+    }
+
+    /* Grid helpers */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+    /* Timeline step */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      border: 2px solid var(--brand);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .timeline-dot.green {
+      background: var(--positive-light);
+      border-color: var(--positive);
+    }
+    .timeline-content h4 {
+      font-size: 14px; font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+    .timeline-content p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Big number */
+    .big-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--positive);
+      line-height: 1;
+    }
+    .big-num-label {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    /* Arcaflow brand header */
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .brand-logo {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: 0.5px;
+    }
+    .brand-sep {
+      color: var(--border);
+      font-size: 13px;
+    }
+    .brand-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div id="progress-bar"><div id="progress-fill"></div></div>
+
+  <!-- Slide counter -->
+  <div id="slide-counter">01 / 03</div>
+
+  <!-- Nav dots -->
+  <div id="nav-dots">
+    <div class="nav-dot active" data-slide="0"><span class="dot-label">Welcome</span></div>
+    <div class="nav-dot" data-slide="1"><span class="dot-label">Platform Access</span></div>
+    <div class="nav-dot" data-slide="2"><span class="dot-label">What's Next</span></div>
+  </div>
+
+  <!-- Keyboard hint -->
+  <div id="kbd-hint">← → arrow keys to navigate</div>
+
+  <!-- Drawing toolbar -->
+  <div id="draw-toolbar">
+    <button class="draw-btn" id="btn-pen" title="Draw">✏️</button>
+    <button class="draw-btn" id="btn-clear" title="Clear">🗑️</button>
+  </div>
+
+  <!-- Slides -->
+  <div id="slides">
+
+    <!-- ===== SLIDE 1 — COVER ===== -->
+    <div class="slide active" id="s1">
+      <canvas class="slide-canvas" id="c1"></canvas>
+      <div class="slide-inner">
+        <div class="brand-header">
+          <span class="brand-logo">ARCAFLOW AI</span>
+          <span class="brand-sep">·</span>
+          <span class="brand-sub">Client Onboarding</span>
+        </div>
+        <div class="label">Let's get started</div>
+        <h1>Your onboarding.<br><span class="accent">Done together,</span><br>in one call.</h1>
+        <p style="margin-top:16px; max-width:520px;">We'll walk through everything live — screen sharing, step by step. No tech knowledge required. By the end of this call, all your platforms are connected and we're ready to build.</p>
+        <div class="pills">
+          <span class="pill red">GoHighLevel CRM</span>
+          <span class="pill">Facebook Ads Manager</span>
+          <span class="pill">Meta Business Account</span>
+          <span class="pill green">Slack Channel</span>
+        </div>
+        <div style="margin-top:36px;">
+          <span class="cursive">~60 minutes · screen share · guided end-to-end →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 2 — PLATFORM ACCESS ===== -->
+    <div class="slide" id="s2">
+      <canvas class="slide-canvas" id="c2"></canvas>
+      <div class="slide-inner">
+        <div class="label" style="margin-bottom:6px;">What we set up together</div>
+        <h2 style="margin-bottom:6px;">4 platforms. <span class="accent">One call.</span></h2>
+        <p style="margin-bottom:28px; max-width:560px;">We guide you through each one live. You create the accounts — we configure everything. Nothing gets left to chance.</p>
+        <div class="grid-2" style="gap:16px;">
+
+          <!-- GHL -->
+          <div class="step-card red-border">
+            <span class="step-num">01</span>
+            <div class="step-icon">⚙️</div>
+            <div class="step-title">GoHighLevel CRM</div>
+            <div class="step-body">We create your GHL sub-account together. This becomes your central hub — leads, pipelines, automations, and follow-up all live here. We configure it from scratch during the call.</div>
+            <span class="step-tag">Account creation · guided setup</span>
+          </div>
+
+          <!-- Facebook Ads Manager -->
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <div class="step-icon">📣</div>
+            <div class="step-title">Facebook Ads Manager</div>
+            <div class="step-body">You add Thomas and our media buyer as partners with the correct access roles. Roofers often can't do this solo — we walk you through it step by step to make sure it's done right.</div>
+            <span class="step-tag">Partner access · screen share</span>
+          </div>
+
+          <!-- Retell / Telephony -->
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <div class="step-icon">📞</div>
+            <div class="step-title">Retell — Voice AI Setup</div>
+            <div class="step-body">We connect your phone number to Retell, our voice AI platform. This powers your inbound and outbound calling agents. We configure the number, test the agent live, and make sure every call is handled automatically.</div>
+            <span class="step-tag">Telephony · Retell · number setup</span>
+          </div>
+
+          <!-- Slack -->
+          <div class="step-card green-border">
+            <span class="step-num">04</span>
+            <div class="step-icon">💬</div>
+            <div class="step-title">Slack — Our Communication Hub</div>
+            <div class="step-body">We create a dedicated Slack channel for your project. This is where updates, questions, and deliverables happen — fast, direct, and organised. No email threads, no noise.</div>
+            <span class="step-tag">Dedicated channel · main comms</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 3 — WHAT'S NEXT ===== -->
+    <div class="slide" id="s3">
+      <canvas class="slide-canvas" id="c3"></canvas>
+      <div class="slide-inner">
+        <div class="grid-2" style="gap:40px; align-items:start;">
+          <div>
+            <div class="label" style="margin-bottom:6px;">After the onboarding call</div>
+            <h2 style="margin-bottom:18px;">You're connected.<br><span class="accent">We build.</span></h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot">✅</div>
+                <div class="timeline-content">
+                  <h4>Onboarding Call Complete</h4>
+                  <p>All 4 platforms connected. Slack channel live. Access confirmed on our end.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot">🛠️</div>
+                <div class="timeline-content">
+                  <h4>Build Phase Begins</h4>
+                  <p>GHL workflows, automations, and ad infrastructure are configured by our team in the background.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot">🧪</div>
+                <div class="timeline-content">
+                  <h4>Testing & Review</h4>
+                  <p>We test every flow end-to-end and send you a walkthrough video before anything goes live.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot green">🚀</div>
+                <div class="timeline-content">
+                  <h4>Go Live</h4>
+                  <p>Systems active. Ads running. You start getting results within the first week.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div class="card green-border" style="text-align:center; padding:28px 20px;">
+              <div class="big-num">~60</div>
+              <div class="big-num-label">Min onboarding call</div>
+            </div>
+            <div class="card" style="text-align:center; padding:28px 20px;">
+              <div class="big-num" style="color: var(--brand);">7–14</div>
+              <div class="big-num-label">Days to go-live</div>
+            </div>
+            <div class="card" style="padding:18px 20px;">
+              <p style="font-size:12.5px; line-height:1.6;">All you need is a laptop and 60 minutes. We handle the rest — configuration, testing, and launch. Your job is to show up on the call.</p>
+            </div>
+            <div style="margin-top:4px;">
+              <span class="cursive">Questions? Ping us on Slack anytime →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /slides -->
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.nav-dot');
+    const counter = document.getElementById('slide-counter');
+    const progressFill = document.getElementById('progress-fill');
+    let current = 0;
+    const total = slides.length;
+
+    function goTo(idx) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (idx + total) % total;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      counter.textContent = String(current + 1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+      progressFill.style.width = ((current + 1) / total * 100) + '%';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goTo(current - 1);
+    });
+
+    dots.forEach(dot => dot.addEventListener('click', () => goTo(parseInt(dot.dataset.slide))));
+
+    // Touch support
+    let touchStartX = 0;
+    document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+    document.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    });
+
+    // Drawing mode
+    let drawing = false;
+    let drawMode = false;
+    let penColor = '#e51551';
+    const penBtn = document.getElementById('btn-pen');
+    const clearBtn = document.getElementById('btn-clear');
+
+    function getCanvas() { return document.getElementById('c' + (current + 1)); }
+
+    penBtn.addEventListener('click', () => {
+      drawMode = !drawMode;
+      penBtn.classList.toggle('active', drawMode);
+      document.querySelectorAll('.slide-canvas').forEach(c => c.classList.toggle('draw-mode', drawMode));
+    });
+
+    clearBtn.addEventListener('click', () => {
+      const c = getCanvas();
+      c.getContext('2d').clearRect(0, 0, c.width, c.height);
+    });
+
+    function initCanvas(canvas) {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    document.querySelectorAll('.slide-canvas').forEach(c => {
+      initCanvas(c);
+      c.addEventListener('mousedown', e => {
+        if (!drawMode) return;
+        drawing = true;
+        const ctx = c.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+        ctx.strokeStyle = penColor;
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+      });
+      c.addEventListener('mousemove', e => {
+        if (!drawing || !drawMode) return;
+        const ctx = c.getContext('2d');
+        ctx.lineTo(e.clientX, e.clientY);
+        ctx.stroke();
+      });
+      c.addEventListener('mouseup', () => { drawing = false; });
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.slide-canvas').forEach(c => initCanvas(c));
+    });
+
+    // Init progress
+    progressFill.style.width = (1 / total * 100) + '%';
+  </script>
+</body>
+</html>
