@@ -1,0 +1,176 @@
+{
+  "slug": "agency-white-label",
+  "client": "Agency Partner",
+  "company": "Your Agency",
+  "service": "White-Label Lead Automation System — Phase 1",
+  "date": "2026-03-20",
+  "language": "en",
+  "challenges": [
+    {
+      "area": "Clients are asking for AI — you can't deliver it",
+      "impact": "Every time a client asks about automation or AI follow-up and you say 'we don't do that,' you're handing them a reason to look elsewhere."
+    },
+    {
+      "area": "Outsourcing kills your margins",
+      "impact": "When you subcontract tech builds, your margin evaporates. You're stuck being the middleman with no upside and full client accountability."
+    },
+    {
+      "area": "Lost deals to agencies with better tech",
+      "impact": "Competitors who offer automation as part of their stack close faster and retain longer. You're fighting on price instead of value."
+    },
+    {
+      "area": "Scaling requires tech headcount",
+      "impact": "Without a reliable build partner, adding services means hiring. That's payroll, overhead, and risk — before you've seen a single dollar from the new service."
+    }
+  ],
+  "approach": {
+    "body": "We build it. You brand it. Your client sees your name.\n\nThe white-label model is simple: Arcaflow builds the system end-to-end — lead capture, AI voice agent, CRM integration, alerts — and hands it over fully operational, configured in your client's accounts. You present it as your service. We stay invisible.\n\nPhase 1 is the core system: the highest-impact, fastest-to-deploy layer. It's scoped to launch quickly, prove ROI immediately, and give you something concrete to show clients within 2–3 weeks of kickoff.",
+    "points": [
+      {
+        "label": "You Own the Client Relationship",
+        "description": "You pitch, close, and manage the client. We handle the technical build. Your brand, your margin, your retention."
+      },
+      {
+        "label": "Phase 1 First — Expand Later",
+        "description": "Start with the core lead automation system. Once Phase 1 is live and proving value, Phase 2 (inbound AI receptionist, after-hours handling) is a natural upsell you control."
+      }
+    ]
+  },
+  "parts": [
+    {
+      "title": "Lead Capture & AI Routing",
+      "items": [
+        {
+          "activity": "Webhook integration for up to 3 lead sources (forms, texts, referrals)",
+          "benefit": "Every lead — regardless of where it comes from — enters the same automated pipeline"
+        },
+        {
+          "activity": "AI parsing layer (GPT-4o-mini) converts raw messages into structured data",
+          "benefit": "No more copy-pasting or manual data interpretation; the system reads and categorizes leads automatically"
+        },
+        {
+          "activity": "Deduplication logic to prevent double-processing",
+          "benefit": "Clean pipeline, no confused follow-ups, no duplicate CRM records"
+        }
+      ]
+    },
+    {
+      "title": "AI Voice Agent — Outbound Follow-Up",
+      "items": [
+        {
+          "activity": "Retell AI voice agent configured with qualification script (damage type, urgency, contact info, homeowner status)",
+          "benefit": "Prospect receives a call within 60 seconds of lead arrival — before they've called a competitor"
+        },
+        {
+          "activity": "Retry logic for unanswered calls + SMS fallback",
+          "benefit": "No lead goes cold; the system follows up automatically so your client doesn't have to"
+        },
+        {
+          "activity": "Full call transcript saved per lead",
+          "benefit": "Your client has a paper trail for every conversation — useful for QA, disputes, and coaching"
+        }
+      ]
+    },
+    {
+      "title": "CRM Integration & Alerts",
+      "items": [
+        {
+          "activity": "Auto-create contact + job record in client's CRM on every qualified lead",
+          "benefit": "Zero manual data entry — the CRM fills itself in real time"
+        },
+        {
+          "activity": "SMS alert to client on every lead outcome (called, qualified, unanswered, failed)",
+          "benefit": "Client stays informed without logging in — visibility from their phone"
+        },
+        {
+          "activity": "Error alerting for parse failures or API issues",
+          "benefit": "Nothing breaks silently; you always know if something needs attention"
+        }
+      ]
+    },
+    {
+      "title": "White-Label Configuration",
+      "items": [
+        {
+          "activity": "All systems built inside your client's accounts (n8n, Twilio, Retell, CRM)",
+          "benefit": "Your client owns everything from day one — no vendor lock-in, no ongoing dependency"
+        },
+        {
+          "activity": "Voice agent script and tone calibrated to match your client's brand",
+          "benefit": "The AI sounds like it belongs to their business, not a generic bot"
+        },
+        {
+          "activity": "Handoff documentation and walkthrough session",
+          "benefit": "You and your client understand how the system works — no black box"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Part 1: Lead Capture & AI Routing", "duration": "3–4 days" },
+    { "phase": "Part 2: AI Voice Agent Build & Script", "duration": "4–5 days" },
+    { "phase": "Part 3: CRM Integration & Alerts", "duration": "3–4 days" },
+    { "phase": "Part 4: White-Label Config, QA & Handoff", "duration": "2–3 days" },
+    { "phase": "Total (Go-Live)", "duration": "~ 2–3 weeks" }
+  ],
+  "investment": {
+    "type": "single",
+    "original_total": "$4,000",
+    "total": "$3,300",
+    "roi_framing": "One closed client deal on your end recovers this investment completely. Every subsequent build costs you 25% less. This is the entry point to a repeatable service line.",
+    "items": [
+      { "deliverable": "Part 1: Lead Capture & AI Routing", "price": null },
+      { "deliverable": "Part 2: AI Voice Agent — Outbound", "price": null },
+      { "deliverable": "Part 3: CRM Integration & Alerts", "price": null },
+      { "deliverable": "Part 4: White-Label Config & Handoff", "price": null }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "Proposal & Pitch Support",
+      "detail": "We'll help you structure the pitch to your client — pricing strategy, objection handling, and how to frame the ROI. You walk into that sales call prepared."
+    },
+    {
+      "bonus": "25% Off All Future Client Builds",
+      "detail": "Every subsequent system we build for your clients is priced at a 25% discount. Scale your service offering without scaling your costs."
+    },
+    {
+      "bonus": "Full Infrastructure Ownership",
+      "detail": "Every credential, automation, and account lives with your client. No lock-in to us, no monthly platform fees funneled through Arcaflow. It's yours."
+    },
+    {
+      "bonus": "Flexible Post-Launch Support",
+      "detail": "After go-live, choose what works for you: ongoing support retainer at $497/month, or a one-time training session so you can maintain the system independently."
+    }
+  ],
+  "final_total": "$3,300",
+  "next_steps": [
+    "Confirm — Review scope and approve Phase 1 deliverables",
+    "Deposit — 50% upfront to begin immediately",
+    "Onboarding — Share client's CRM access, lead source details, and Twilio/Retell accounts",
+    "Kick-off call — 30 minutes to align on client profile, voice script tone, and Phase 1 priorities"
+  ],
+  "terms": [
+    {
+      "area": "Payment",
+      "detail": "50% deposit to begin, 50% on delivery and final QA sign-off"
+    },
+    {
+      "area": "Scope",
+      "detail": "Includes all items in Parts 1–4 above. Excludes: Phase 2 features (inbound receptionist), ongoing ad management, content production, or out-of-scope requests added after kickoff"
+    },
+    {
+      "area": "Revisions",
+      "detail": "Up to 3 rounds of QA and revision included. Additional revision rounds quoted separately"
+    },
+    {
+      "area": "Ownership",
+      "detail": "All systems are built in your client's accounts and remain their property. No Arcaflow lock-in. No recurring fees owed to us unless the optional retainer is selected"
+    },
+    {
+      "area": "Prerequisites",
+      "detail": "Access to client's CRM (API or admin), Twilio account or existing business number, and Retell AI account required before build begins"
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
