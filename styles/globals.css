@@ -246,4 +246,25 @@ body::before {
   .g4 { grid-template-columns: 1fr 1fr; }
   .nav-dots { display: none; }
   .pills-row { flex-direction: column; align-items: center; }
+
+  /* Slide containers: reduce padding, top-align on mobile */
+  .slide-content-wrap > div {
+    padding-top: 52px !important;
+    padding-bottom: 28px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Tighten table cells on mobile */
+  .prop-table td, .prop-table th { padding: 8px 8px; }
+  .prop-table td:first-child { width: 45%; }
+
+  /* Sticky notes smaller on mobile */
+  .sticky { padding: 14px; }
+  .sticky .sticky-title { font-size: 13px; }
+  .sticky .sticky-text { font-size: 11px; }
+
+  /* Miro frame tighter */
+  .miro-frame { padding: 16px; }
 }

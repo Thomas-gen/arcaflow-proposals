@@ -109,21 +109,9 @@
     { "phase": "Weeks 1–2 — Ramp", "duration": "$50 per booked call" },
     { "phase": "Weeks 3–4 — Full speed", "duration": "$70 per booked call" },
     { "phase": "Month 2+ — Locked in", "duration": "$100 per booked call" },
-    { "phase": "KPI Unlock (Month 2)", "duration": "15% per close" }
+    { "phase": "Close commission — Month 1", "duration": "10% of setup fee" },
+    { "phase": "Close commission — Month 2+ (KPIs hit)", "duration": "15% of setup fee" }
   ],
-  "investment": {
-    "type": "single",
-    "total": "Commission-only",
-    "roi_framing": "Conservative month 1 (3 booked calls/week): ~$720 in call commissions + $500 per close (10%). Hit KPIs in month 2: up to $4,000/month between cold + inbound leads.",
-    "items": [
-      { "deliverable": "Per booked discovery call — Weeks 1–2", "price": "$50" },
-      { "deliverable": "Per booked discovery call — Weeks 3–4", "price": "$70" },
-      { "deliverable": "Per booked discovery call — Month 2+", "price": "$100" },
-      { "deliverable": "Per closed client — Month 1", "price": "10% of setup fee" },
-      { "deliverable": "Per closed client — Month 2", "price": "12% of setup fee" },
-      { "deliverable": "Per closed client — KPIs met", "price": "15% of setup fee" }
-    ]
-  },
   "bonuses": [
     {
       "bonus": "Month 2 — Inbound leads",

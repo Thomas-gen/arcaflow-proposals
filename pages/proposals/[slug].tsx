@@ -24,7 +24,7 @@ export default function ProposalPage({ data }: Props) {
     ...(data.approach ? [<ApproachSlide key="approach" data={data} />] : []),
     <SolutionSlide key="solution" data={data} />,
     <TimelineSlide key="timeline" data={data} />,
-    <InvestmentSlide key="investment" data={data} />,
+    ...(data.investment ? [<InvestmentSlide key="investment" data={data} />] : []),
     <BonusesSlide key="bonuses" data={data} />,
     <NextStepsSlide key="nextsteps" data={data} />,
   ];

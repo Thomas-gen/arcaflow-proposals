@@ -136,6 +136,7 @@
   "investment": {
     "type": "single",
     "total": "$5,500 setup + $2,200/month",
+    "original_total": "$7,300 setup + $2,900/month",
     "roi_framing": "Ad spend billed directly by Meta — recommended $1,500–2,000/month to start. At a 10% close rate and $30K average job value, two closed jobs in the first month covers setup, retainer, and ad spend combined.",
     "items": [
       { "deliverable": "Part 1: Lead Infrastructure", "price": null },
@@ -148,8 +149,16 @@
   },
   "bonuses": [
     {
-      "bonus": "90-day performance review call",
-      "detail": "At the 90-day mark we review booked appointments, close rate, and ad performance together — and adjust strategy based on real data"
+      "bonus": "Weekly calls — first 30 days",
+      "detail": "Every week we review booked appointments, close rate, and ad performance together — and adjust strategy based on real data"
+    },
+    {
+      "bonus": "Offer creation + Unique Messaging",
+      "detail": "GTM strategy with a unique angle and messaging — so you enter the market with a position competitors can't copy overnight"
+    },
+    {
+      "bonus": "Static images, Reviews, Carousels & video scripts",
+      "detail": "Full content creation — crucial since Facebook's Andromeda update made creative quality the #1 performance lever"
     },
     {
       "bonus": "Competitor ad intelligence audit",
@@ -157,14 +166,14 @@
     },
     {
       "bonus": "Launch Rate — 25% off standard pricing",
-      "detail": "Prices above reflect 25% off our standard rate ($7,300 setup + $2,900/month). Saving $1,800+ on this engagement"
+      "detail": "Prices above already reflect 25% off our standard rate ($7,300 setup + $2,900/month). Saving: $1,800+ on this engagement"
     }
   ],
   "final_total": "$5,500 setup + $2,200/month",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
-    "Payment — Setup fee due to begin build",
-    "Onboarding — Provide access to Meta Business Manager and calendar (Google Cal or JobNimbus)",
+    "Payment — Setup fee 60% upfront, 40% on delivery",
+    "Onboarding — Provide access to Meta Business Manager and create GHL account via our referral link",
     "Kick-off call — 30 minutes to align on qualifying questions, service area, and existing Facebook account before Day 1"
   ],
   "terms": [

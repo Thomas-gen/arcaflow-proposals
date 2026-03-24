@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, ReactNode } from "react";
+import { SlideNavContext, TabHandler } from "@/contexts/SlideNavContext";
 
 interface SlideLayoutProps {
   slides: ReactNode[];
@@ -10,6 +11,7 @@ export default function SlideLayout({ slides, clientName, totalSlides }: SlideLa
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
   const touchStart = useRef<number | null>(null);
+  const tabHandlerRef = useRef<TabHandler | null>(null);
 
   const goTo = useCallback(
     (index: number) => {
@@ -31,9 +33,11 @@ export default function SlideLayout({ slides, clientName, totalSlides }: SlideLa
     const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " ") {
         e.preventDefault();
+        if (tabHandlerRef.current?.next()) return;
         next();
       } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
+        if (tabHandlerRef.current?.prev()) return;
         prev();
       }
     };
@@ -49,7 +53,11 @@ export default function SlideLayout({ slides, clientName, totalSlides }: SlideLa
     if (touchStart.current === null) return;
     const delta = touchStart.current - e.changedTouches[0].clientX;
     if (Math.abs(delta) > 50) {
-      delta > 0 ? next() : prev();
+      if (delta > 0) {
+        if (!tabHandlerRef.current?.next()) next();
+      } else {
+        if (!tabHandlerRef.current?.prev()) prev();
+      }
     }
     touchStart.current = null;
   };
@@ -57,6 +65,7 @@ export default function SlideLayout({ slides, clientName, totalSlides }: SlideLa
   const progress = ((current + 1) / totalSlides) * 100;
 
   return (
+    <SlideNavContext.Provider value={{ setTabHandler: (h) => { tabHandlerRef.current = h; } }}>
     <div
       className="relative w-full h-screen overflow-hidden select-none"
       onTouchStart={onTouchStart}
@@ -88,7 +97,7 @@ export default function SlideLayout({ slides, clientName, totalSlides }: SlideLa
 
       {/* Slide content */}
       <div
-        className="w-full h-full"
+        className="w-full h-full slide-content-wrap"
         style={{
           opacity: animating ? 0 : 1,
           transition: "opacity 0.22s ease",
@@ -120,5 +129,6 @@ export default function SlideLayout({ slides, clientName, totalSlides }: SlideLa
         ← →
       </div>
     </div>
+    </SlideNavContext.Provider>
   );
 }

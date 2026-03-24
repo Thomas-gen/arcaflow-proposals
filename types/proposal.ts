@@ -26,6 +26,7 @@ export interface InvestmentItem {
 export interface InvestmentSingle {
   type: "single";
   total: string;
+  original_total?: string;
   roi_framing: string;
   items: InvestmentItem[];
 }
@@ -77,7 +78,7 @@ export interface ProposalData {
   approach?: Approach;
   parts: Part[];
   timeline: TimelinePhase[];
-  investment: Investment;
+  investment?: Investment;
   bonuses: Bonus[];
   final_total: string;
   next_steps: string[];

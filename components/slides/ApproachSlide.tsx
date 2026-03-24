@@ -29,20 +29,22 @@ export default function ApproachSlide({ data }: Props) {
           {heading}
         </h2>
 
-        {/* Body text in miro frame */}
-        <div className="miro-frame" style={{ marginBottom: "24px" }}>
-          <div className="miro-frame-title">{overviewLabel}</div>
-          <p
-            style={{
-              fontSize: "14px",
-              color: "#444",
-              lineHeight: 1.75,
-              whiteSpace: "pre-line",
-            }}
-          >
-            {a.body}
-          </p>
-        </div>
+        {/* Body text in miro frame — only shown if body is non-empty */}
+        {a.body && (
+          <div className="miro-frame" style={{ marginBottom: "24px" }}>
+            <div className="miro-frame-title">{overviewLabel}</div>
+            <p
+              style={{
+                fontSize: "14px",
+                color: "#444",
+                lineHeight: 1.75,
+                whiteSpace: "pre-line",
+              }}
+            >
+              {a.body}
+            </p>
+          </div>
+        )}
 
         {/* Channel / strategy points */}
         {a.points && a.points.length > 0 && (
@@ -51,21 +53,21 @@ export default function ApproachSlide({ data }: Props) {
               <div
                 key={i}
                 className="flow-step"
-                style={{ textAlign: "left", padding: "18px" }}
+                style={{ textAlign: "left", padding: "32px 28px" }}
               >
                 <div className="step-num">{i + 1}</div>
                 <div
                   style={{
-                    fontSize: "13px",
+                    fontSize: "17px",
                     fontWeight: 700,
                     color: "#1a1a2e",
-                    marginTop: "10px",
-                    marginBottom: "6px",
+                    marginTop: "14px",
+                    marginBottom: "10px",
                   }}
                 >
                   {p.label}
                 </div>
-                <div style={{ fontSize: "12px", color: "#555", lineHeight: 1.5 }}>
+                <div style={{ fontSize: "14px", color: "#555", lineHeight: 1.6 }}>
                   {p.description}
                 </div>
               </div>

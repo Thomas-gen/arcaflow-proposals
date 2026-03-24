@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ProposalData } from "@/types/proposal";
+import { useSlideNav } from "@/contexts/SlideNavContext";
 
 interface Props {
   data: ProposalData;
@@ -7,6 +8,28 @@ interface Props {
 
 export default function SolutionSlide({ data }: Props) {
   const [activeTab, setActiveTab] = useState(0);
+  const { setTabHandler } = useSlideNav();
+
+  useEffect(() => {
+    setTabHandler({
+      next: () => {
+        if (activeTab < data.parts.length - 1) {
+          setActiveTab((t) => t + 1);
+          return true;
+        }
+        return false;
+      },
+      prev: () => {
+        if (activeTab > 0) {
+          setActiveTab((t) => t - 1);
+          return true;
+        }
+        return false;
+      },
+    });
+    return () => setTabHandler(null);
+  }, [activeTab, data.parts.length, setTabHandler]);
+
   const heading = data.language === "it" ? "Soluzioni & Consegne" : "Solution & Deliverables";
   const frameLabel = data.language === "it" ? "DELIVERABLES" : "DELIVERABLES";
   const col1 = data.language === "it" ? "Attività" : "Activity";

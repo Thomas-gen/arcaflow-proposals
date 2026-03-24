@@ -25,6 +25,11 @@ function SingleInvestment({ inv, lang }: { inv: InvestmentSingle; lang: string }
       {/* Right: roi-box + sticky */}
       <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
         <div className="roi-box">
+          {inv.original_total && (
+            <div style={{ textDecoration: "line-through", opacity: 0.45, fontSize: "clamp(13px, 1.4vw, 16px)", marginBottom: "4px" }}>
+              {inv.original_total}
+            </div>
+          )}
           <div className="roi-num">{inv.total}</div>
           <div className="roi-label">{totalLabel}</div>
         </div>

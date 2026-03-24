@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arcaflow AI × MarketerHire — Partnership</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --brand: #e51551;
+      --brand-light: #2a0a14;
+      --positive: #4ade80;
+      --positive-light: #0a2018;
+      --neutral: #3a3a3a;
+      --neutral-light: #1e1e1e;
+      --border: #2a2a2a;
+      --text: #e5e7eb;
+      --muted: #a3a3a3;
+      --card-bg: #1a1a1a;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, #333 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--border); z-index: 100;
+    }
+    #progress-fill {
+      height: 100%; background: var(--brand);
+      transition: width 0.4s ease;
+    }
+
+    /* Counter */
+    #slide-counter {
+      position: fixed; top: 20px; left: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 600;
+      color: var(--muted); letter-spacing: 1px; z-index: 100;
+    }
+
+    /* Nav dots */
+    #nav-dots {
+      position: fixed; right: 22px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 10px; z-index: 100;
+    }
+    .nav-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); cursor: pointer;
+      transition: all 0.2s ease; position: relative;
+    }
+    .nav-dot.active { background: var(--brand); transform: scale(1.4); }
+    .nav-dot:hover { background: var(--brand); }
+    .nav-dot .dot-label {
+      position: absolute; right: 18px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px; white-space: nowrap;
+      background: #222; color: var(--text);
+      padding: 3px 8px; border-radius: 4px;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .nav-dot:hover .dot-label { opacity: 1; }
+
+    /* Kbd hint */
+    #kbd-hint {
+      position: fixed; bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px; color: #555;
+      font-family: 'JetBrains Mono', monospace; z-index: 100;
+    }
+
+    /* Slides */
+    #slides { position: fixed; inset: 0; z-index: 1; }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px 80px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateY(20px);
+    }
+    .slide.active {
+      opacity: 1; pointer-events: all; transform: translateY(0);
+    }
+    .slide-inner { width: 100%; max-width: 1040px; }
+
+    /* Typography */
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 900; line-height: 1.08;
+      letter-spacing: -1.5px; color: var(--text);
+    }
+    h2 {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 900; line-height: 1.15; letter-spacing: -0.5px;
+    }
+    h3 { font-size: 17px; font-weight: 800; line-height: 1.3; }
+    p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .accent { color: var(--brand); }
+    .green { color: var(--positive); }
+    .cursive { font-family: 'Caveat', cursive; font-size: 17px; color: var(--muted); }
+
+    /* Pills */
+    .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .pill {
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      border: 1.5px solid var(--border);
+      background: var(--card-bg); color: var(--text);
+    }
+    .pill.red { background: var(--brand-light); border-color: var(--brand); color: var(--brand); }
+    .pill.green-p { background: var(--positive-light); border-color: var(--positive); color: var(--positive); }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 22px;
+    }
+    .card.red-border { border-color: var(--brand); }
+    .card.green-border { border-color: var(--positive); border-width: 2px; }
+
+    /* Price box */
+    .price-box {
+      background: var(--card-bg);
+      border: 2px solid var(--positive);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .price-main {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 36px; font-weight: 700;
+      color: var(--positive); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .price-sub {
+      font-size: 12px; color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .price-note {
+      font-size: 11px; color: var(--muted);
+      margin-top: 10px; line-height: 1.5;
+    }
+
+    /* Feature row */
+    .feature {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .feature:last-child { border-bottom: none; }
+    .feature-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--brand-light);
+      border: 1.5px solid var(--brand);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .feature-icon.green-ic {
+      background: var(--positive-light);
+      border-color: var(--positive);
+    }
+    .feature h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .feature p { font-size: 12px; margin: 0; }
+
+    /* Grids */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* Split table */
+    .split-row {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 0; border-bottom: 1px solid var(--border);
+      padding: 14px 0; align-items: center;
+    }
+    .split-row.header-row {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px; margin-bottom: 4px;
+    }
+    .split-row .col { font-size: 13px; }
+    .split-row .col.right { text-align: right; }
+    .split-row.header-row .col {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .split-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700; font-size: 15px;
+    }
+
+    /* Step */
+    .step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--brand-light); border: 2px solid var(--brand);
+      color: var(--brand); font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .step p { font-size: 12px; margin: 0; }
+
+    /* Stat */
+    .stat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(32px, 4vw, 48px); font-weight: 700;
+      color: var(--brand); line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide { padding: 40px 20px; overflow-y: auto; align-items: flex-start; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      #nav-dots, #kbd-hint { display: none; }
+      html, body { overflow: auto; }
+      .slide { position: relative; opacity: 1; transform: none; pointer-events: all; }
+      #slides { position: relative; overflow: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"><div id="progress-fill"></div></div>
+<div id="slide-counter">01 / 05</div>
+
+<div id="nav-dots">
+  <div class="nav-dot active" data-slide="0"><span class="dot-label">Cover</span></div>
+  <div class="nav-dot" data-slide="1"><span class="dot-label">The Opportunity</span></div>
+  <div class="nav-dot" data-slide="2"><span class="dot-label">Offer 01</span></div>
+  <div class="nav-dot" data-slide="3"><span class="dot-label">Offer 02</span></div>
+  <div class="nav-dot" data-slide="4"><span class="dot-label">Next Steps</span></div>
+</div>
+
+<div id="kbd-hint">← → arrow keys to navigate</div>
+
+<div id="slides">
+
+  <!-- SLIDE 1 — Cover -->
+  <div class="slide active" id="s1">
+    <div class="slide-inner">
+      <div class="label">Partnership Overview · 2026</div>
+      <h1>Arcaflow AI<br><span class="accent">×</span> MarketerHire</h1>
+      <p style="font-size:16px; margin-top:20px; max-width:560px; line-height:1.6;">
+        Two offers. One pipeline. A system built to convert the leads you're already discarding.
+      </p>
+      <div class="pills" style="margin-top:28px;">
+        <span class="pill">HVAC</span>
+        <span class="pill">Roofing</span>
+        <span class="pill">Plumbing</span>
+        <span class="pill">Cleaning</span>
+        <span class="pill">Landscaping</span>
+        <span class="pill">Local Services</span>
+      </div>
+      <p class="cursive" style="margin-top:32px;">Prepared by Thomas Filippa · Arcaflow AI</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — The Opportunity -->
+  <div class="slide" id="s2">
+    <div class="slide-inner">
+      <div class="label">The Setup</div>
+      <h2>You have <span class="accent">40–175 warm leads</span><br>dropping off every month</h2>
+      <p style="margin-top:14px; max-width:600px;">
+        Budget-rejected local businesses. Real pain, real revenue potential — just a different price point.
+      </p>
+      <div class="grid-2" style="margin-top:32px;">
+        <div class="card">
+          <div class="label" style="color:var(--muted);">What happens now</div>
+          <div style="margin-top:12px; display:flex; flex-direction:column; gap:12px;">
+            <div class="feature" style="padding:10px 0; border-bottom:1px solid var(--border);">
+              <div style="font-size:18px; flex-shrink:0;">✗</div>
+              <div><p style="font-size:13px; color:#888;">Auto-scored Tier 4 — no human review</p></div>
+            </div>
+            <div class="feature" style="padding:10px 0; border-bottom:1px solid var(--border);">
+              <div style="font-size:18px; flex-shrink:0;">✗</div>
+              <div><p style="font-size:13px; color:#888;">55% never contacted — straight to the black hole</p></div>
+            </div>
+            <div class="feature" style="padding:10px 0;">
+              <div style="font-size:18px; flex-shrink:0;">✗</div>
+              <div><p style="font-size:13px; color:#888;">Zero revenue recovered from a high-intent segment</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="card green-border">
+          <div class="label" style="color:var(--positive);">What this partnership does</div>
+          <div style="margin-top:12px; display:flex; flex-direction:column; gap:12px;">
+            <div class="feature" style="padding:10px 0; border-bottom:1px solid var(--border);">
+              <div style="font-size:18px; flex-shrink:0; color:var(--positive);">✓</div>
+              <div><p style="font-size:13px;">Qualified leads handed off to Arcaflow within 48h</p></div>
+            </div>
+            <div class="feature" style="padding:10px 0; border-bottom:1px solid var(--border);">
+              <div style="font-size:18px; flex-shrink:0; color:var(--positive);">✓</div>
+              <div><p style="font-size:13px;">Arcaflow closes, builds, and delivers — you earn recurring revenue</p></div>
+            </div>
+            <div class="feature" style="padding:10px 0;">
+              <div style="font-size:18px; flex-shrink:0; color:var(--positive);">✓</div>
+              <div><p style="font-size:13px;">50/50 split on every retainer — no extra work on your end</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — Offer 01 -->
+  <div class="slide" id="s3">
+    <div class="slide-inner">
+      <div class="label">Offer 01</div>
+      <div class="grid-2" style="gap:28px; align-items:start;">
+        <div>
+          <h2>Appointment Setting<br>Infrastructure</h2>
+          <p style="margin-top:14px; max-width:440px;">
+            A fully automated system that answers leads, books appointments, and follows up — 24/7, without adding headcount.
+          </p>
+          <div style="margin-top:28px;">
+            <div class="feature">
+              <div class="feature-icon">🎙</div>
+              <div>
+                <h4>Voice AI</h4>
+                <p>Answers missed calls around the clock and books the job on the spot.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">💬</div>
+              <div>
+                <h4>Text AI</h4>
+                <p>Automated SMS follow-up that re-engages leads before they go cold.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">✉️</div>
+              <div>
+                <h4>SMS / Email Sequences</h4>
+                <p>Multi-step nurture sequences triggered automatically — keeps leads warm until they're ready to book.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">⚡</div>
+              <div>
+                <h4>Speed-to-Lead + Calendar Booking</h4>
+                <p>Instant follow-up on every new lead. Appointments booked and confirmed automatically.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon" style="background:#1a1a1a; border-color:var(--border);">📊</div>
+              <div>
+                <h4>Reporting Dashboard</h4>
+                <p>Live view of leads, bookings, and revenue in one place.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="price-box">
+            <div class="price-sub" style="margin-bottom:10px;">Setup Fee</div>
+            <div class="price-main">$5,000</div>
+            <div class="price-note">One-time · covers full build &amp; configuration</div>
+          </div>
+          <div class="price-box">
+            <div class="price-sub" style="margin-bottom:10px;">Monthly Retainer</div>
+            <div class="price-main">$2–3K</div>
+            <div class="price-note">3-month minimum · ongoing management &amp; optimization</div>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div class="label">Upsell Path</div>
+            <p style="font-size:12px; margin-top:8px; line-height:1.6;">
+              After 3 months with results, clients graduate naturally to Offer 02 — ads on top of a system that's already working.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — Offer 02 -->
+  <div class="slide" id="s4">
+    <div class="slide-inner">
+      <div class="label">Offer 02</div>
+      <div class="grid-2" style="gap:28px; align-items:start;">
+        <div>
+          <h2>Appointment Setting<br><span class="accent">+ Ads</span></h2>
+          <p style="margin-top:14px; max-width:440px;">
+            Everything in Offer 01, plus a full paid advertising layer that turns the system into a predictable growth engine.
+          </p>
+          <div style="margin-top:24px;" class="card" style="background:var(--neutral-light);">
+            <div class="label">Included from Offer 01</div>
+            <div class="pills" style="margin-top:10px;">
+              <span class="pill">Voice AI</span>
+              <span class="pill">Text AI</span>
+              <span class="pill">Speed-to-Lead</span>
+              <span class="pill">Calendar Booking</span>
+              <span class="pill">Dashboard</span>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <div class="feature">
+              <div class="feature-icon green-ic">📣</div>
+              <div>
+                <h4>Paid Ads</h4>
+                <p>Strategy, content, campaign management, tracking, and reporting — all handled.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon green-ic">🏆</div>
+              <div>
+                <h4>Outbound Voice AI</h4>
+                <p>Proactive reactivation of old leads — automated outbound sequences that work while you sleep.</p>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:11px; color:#555; margin-top:16px;">
+            * Ad spend is paid directly by the client to the ad platform — separate from the retainer.
+          </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="price-box" style="border-color:var(--brand);">
+            <div class="price-sub" style="margin-bottom:6px; color:var(--brand);">Setup Fee</div>
+            <div class="price-main" style="color:var(--brand); font-size:28px; font-style:italic;">None</div>
+            <div class="price-note">No upfront cost — lower barrier to entry</div>
+          </div>
+          <div class="price-box">
+            <div class="price-sub" style="margin-bottom:10px;">Monthly Retainer</div>
+            <div class="price-main">$4–5K</div>
+            <div class="price-note">3-month minimum · full stack delivery</div>
+          </div>
+          <div class="card green-border" style="text-align:center;">
+            <div class="label" style="color:var(--positive);">The Logic</div>
+            <p style="font-size:12px; margin-top:8px; line-height:1.6;">
+              Ads without infrastructure is burning money.<br>
+              <strong style="color:var(--text);">We build the system first. Then we turn on the fuel.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — Next Steps -->
+  <div class="slide" id="s6">
+    <div class="slide-inner">
+      <div class="label">Next Steps</div>
+      <h2>Ready when you are</h2>
+      <p style="margin-top:12px; max-width:540px;">
+        The system is already running — Rocket Service (HVAC) is the live proof of concept. Here's how we move.
+      </p>
+      <div style="margin-top:36px; max-width:640px;">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <h4>Align on terms</h4>
+            <p>Review this doc, flag any questions — then we draft the partnership agreement.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <h4>Define the lead handoff process</h4>
+            <p>Agree on qualification criteria and the speed-to-lead target (48h from rejection to Arcaflow).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <h4>Brief the advertiser</h4>
+            <p>Thomas and Raw align on targeting strategy for the home services segment.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <h4>First client — run the full process</h4>
+            <p>Close one client together, deliver, document the results, and build the first case study.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--border);">
+        <p style="font-size:13px;">
+          <strong style="color:var(--text);">Thomas Filippa</strong> &nbsp;·&nbsp; Arcaflow AI &nbsp;·&nbsp;
+          <span class="accent">thomas@arcaflow.ai</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.nav-dot');
+  const counter = document.getElementById('slide-counter');
+  const fill = document.getElementById('progress-fill');
+  const total = slides.length;
+  let current = 0;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = Math.max(0, Math.min(n, total - 1));
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    fill.style.width = ((current + 1) / total * 100) + '%';
+  }
+
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(current - 1);
+  });
+
+  // Touch swipe
+  let touchX = null;
+  document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    touchX = null;
+  });
+
+  goTo(0);
+</script>
+</body>
+</html>

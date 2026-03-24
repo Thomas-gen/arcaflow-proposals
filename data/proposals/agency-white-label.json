@@ -1,7 +1,7 @@
 {
   "slug": "agency-white-label",
   "client": "Agency Partner",
-  "company": "Your Agency",
+  "company": "White-Label Partnership",
   "service": "White-Label Lead Automation System — Phase 1",
   "date": "2026-03-20",
   "language": "en",
@@ -24,7 +24,7 @@
     }
   ],
   "approach": {
-    "body": "We build it. You brand it. Your client sees your name.\n\nThe white-label model is simple: Arcaflow builds the system end-to-end — lead capture, AI voice agent, CRM integration, alerts — and hands it over fully operational, configured in your client's accounts. You present it as your service. We stay invisible.\n\nPhase 1 is the core system: the highest-impact, fastest-to-deploy layer. It's scoped to launch quickly, prove ROI immediately, and give you something concrete to show clients within 2–3 weeks of kickoff.",
+    "body": "",
     "points": [
       {
         "label": "You Own the Client Relationship",

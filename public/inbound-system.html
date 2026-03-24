@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3-Layer Inbound Conversion System — Arcaflow AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --brand: #e51551;
+      --brand-light: #2a0a14;
+      --positive: #4ade80;
+      --positive-light: #0a2018;
+      --border: #2a2a2a;
+      --text: #e5e7eb;
+      --muted: #888;
+      --card-bg: #161616;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Progress */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 3px; background: #1a1a1a; z-index: 100;
+    }
+    #progress-fill {
+      height: 100%; background: var(--brand);
+      transition: width 0.45s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Counter */
+    #slide-counter {
+      position: fixed; top: 20px; left: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 600;
+      color: #444; letter-spacing: 1.5px; z-index: 100;
+    }
+
+    /* Logo / brand */
+    #brand-tag {
+      position: fixed; top: 20px; right: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 600;
+      color: #333; letter-spacing: 1px; z-index: 100;
+    }
+
+    /* Nav dots */
+    #nav-dots {
+      position: fixed; right: 22px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 10px; z-index: 100;
+    }
+    .nav-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #2a2a2a; cursor: pointer;
+      transition: all 0.2s ease; position: relative;
+    }
+    .nav-dot.active { background: var(--brand); transform: scale(1.5); }
+    .nav-dot:hover { background: var(--brand); }
+    .nav-dot .dot-label {
+      position: absolute; right: 18px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px; white-space: nowrap;
+      background: #1a1a1a; color: var(--text);
+      padding: 3px 8px; border-radius: 4px;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+      border: 1px solid var(--border);
+    }
+    .nav-dot:hover .dot-label { opacity: 1; }
+
+    /* Kbd hint */
+    #kbd-hint {
+      position: fixed; bottom: 22px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px; color: #333;
+      font-family: 'JetBrains Mono', monospace; z-index: 100;
+      letter-spacing: 1px;
+    }
+
+    /* Slides */
+    #slides { position: fixed; inset: 0; z-index: 1; }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 72px 96px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      transform: translateY(16px);
+    }
+    .slide.active {
+      opacity: 1; pointer-events: all; transform: translateY(0);
+    }
+    .slide-inner { width: 100%; max-width: 960px; }
+
+    /* --- Typography --- */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--brand); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 2px; background: var(--brand);
+    }
+
+    h1 {
+      font-size: clamp(40px, 5.5vw, 68px);
+      font-weight: 900; line-height: 1.06;
+      letter-spacing: -2px; color: var(--text);
+    }
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900; line-height: 1.1; letter-spacing: -1px;
+    }
+    h3 { font-size: 18px; font-weight: 800; line-height: 1.3; }
+    p { font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    .dim { color: var(--muted); }
+    .highlight { color: var(--brand); }
+    .green { color: var(--positive); }
+    .cursive { font-family: 'Caveat', cursive; font-size: 18px; color: #555; }
+
+    /* --- Step card --- */
+    .step-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 26px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .step-card.active-card { border-color: var(--positive); }
+    .step-card.green-card { border-color: var(--positive); }
+
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--positive-light); border: 1.5px solid var(--positive);
+      color: var(--positive);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px; font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .step-num.green-num {
+      background: var(--positive-light); border-color: var(--positive);
+      color: var(--positive);
+    }
+
+    .step-card h3 { font-size: 16px; margin-bottom: 4px; }
+    .step-card .sub {
+      font-size: 11px; font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--positive); margin-bottom: 14px;
+    }
+    .step-card .sub.green-sub { color: var(--positive); }
+
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .check-list li {
+      font-size: 13px; color: #aaa;
+      display: flex; align-items: flex-start; gap: 8px; line-height: 1.4;
+    }
+    .check-list li::before {
+      content: '✓';
+      color: var(--positive); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+    .check-list li.green-check::before { color: var(--positive); }
+
+    /* --- Stat block --- */
+    .stat-block {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 20px 22px;
+    }
+    .stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 44px; font-weight: 700;
+      color: var(--positive); line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px; color: var(--muted);
+      margin-top: 6px; line-height: 1.5;
+    }
+
+    /* --- Quote / callout --- */
+    .callout {
+      border-left: 3px solid var(--brand);
+      padding: 14px 20px;
+      background: var(--brand-light);
+      border-radius: 0 10px 10px 0;
+      font-size: 15px; color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* --- Arrow connector --- */
+    .arrow-down {
+      text-align: center; color: #333;
+      font-size: 22px; line-height: 1;
+      margin: 2px 0;
+    }
+
+    /* --- Grid --- */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide { padding: 48px 24px; overflow-y: auto; align-items: flex-start; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      #nav-dots, #kbd-hint { display: none; }
+      html, body { overflow: auto; }
+      .slide { position: relative; opacity: 1; transform: none; pointer-events: all; }
+      #slides { position: relative; overflow: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"><div id="progress-fill"></div></div>
+<div id="slide-counter">01 / 04</div>
+<div id="brand-tag">ARCAFLOW AI</div>
+
+<div id="nav-dots">
+  <div class="nav-dot active" data-slide="0"><span class="dot-label">The Problem</span></div>
+  <div class="nav-dot" data-slide="1"><span class="dot-label">Layer 1 + 2</span></div>
+  <div class="nav-dot" data-slide="2"><span class="dot-label">Layer 3</span></div>
+  <div class="nav-dot" data-slide="3"><span class="dot-label">The Result</span></div>
+</div>
+
+<div id="kbd-hint">← → to navigate</div>
+
+<div id="slides">
+
+  <!-- SLIDE 1 — The Problem -->
+  <div class="slide active" id="s1">
+    <div class="slide-inner">
+      <div class="eyebrow">The Problem</div>
+      <h1>Leads come in.<br><span class="highlight">Nothing happens.</span></h1>
+      <p style="margin-top:24px; font-size:17px; max-width:580px; color:#666; line-height:1.7;">
+        Every time I audit a lead funnel, I see the same pattern.
+      </p>
+      <div style="margin-top:36px; display:flex; flex-direction:column; gap:0; max-width:560px;">
+        <div style="display:flex; align-items:center; gap:16px; padding:18px 20px; background:var(--card-bg); border:1.5px solid var(--border); border-radius:12px 12px 0 0; border-bottom:none;">
+          <span style="font-size:22px;">📥</span>
+          <div>
+            <div style="font-size:15px; font-weight:700;">Lead comes in</div>
+            <div style="font-size:12px; color:var(--muted); margin-top:2px;">Form fill, ad click, DM, missed call</div>
+          </div>
+        </div>
+        <div class="arrow-down" style="background:var(--card-bg); border-left:1.5px solid var(--border); border-right:1.5px solid var(--border); padding:6px 0;">↓</div>
+        <div style="display:flex; align-items:center; gap:16px; padding:18px 20px; background:var(--brand-light); border:1.5px solid var(--brand); border-radius:0 0 12px 12px;">
+          <span style="font-size:22px;">🕳</span>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--brand);">Nothing happens</div>
+            <div style="font-size:12px; color:#c0596d; margin-top:2px;">Slow response. No follow-up. Lead goes cold.</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:32px; font-size:14px; color:#444; max-width:500px; line-height:1.7;">
+        So I built a 3-layer inbound conversion system to fix it — and tested it on a real client.
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — Layer 1 + 2 -->
+  <div class="slide" id="s2">
+    <div class="slide-inner">
+      <div class="eyebrow">The System — Layers 1 & 2</div>
+      <h2 style="margin-bottom:28px;">Catch them fast.<br>Recover the rest.</h2>
+      <div class="grid-2" style="gap:24px; align-items:start;">
+
+        <div style="display:flex; flex-direction:column; gap:0;">
+          <div class="step-card active-card">
+            <div class="step-num">01</div>
+            <h3>Instant Response</h3>
+            <div class="sub">Text Agent</div>
+            <ul class="check-list">
+              <li>The moment a lead comes in, a WhatsApp AI agent responds</li>
+              <li>Handles first questions and quick qualification</li>
+              <li>Pushes them to book an appointment</li>
+              <li>Stops the biggest leak: slow response time</li>
+            </ul>
+          </div>
+          <div class="arrow-down" style="padding:10px 0; color:#333;">↓</div>
+          <div class="step-card active-card">
+            <div class="step-num">02</div>
+            <h3>Lead Recovery</h3>
+            <div class="sub">Voice AI</div>
+            <ul class="check-list">
+              <li>Targets only leads who didn't book through WhatsApp</li>
+              <li>Voice AI calls and restarts the conversation</li>
+              <li>Helps them schedule — automatically</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
+          <div class="callout">
+            People are already comfortable with text. That's where you meet them.
+          </div>
+          <div class="stat-block" style="border-color:var(--positive);">
+            <div class="stat-num">400+</div>
+            <div class="stat-label">calls recovered by Layer 2 alone —<br>leads that would have been lost forever</div>
+          </div>
+          <div style="padding:16px 20px; border:1.5px solid var(--border); border-radius:12px; background:var(--card-bg);">
+            <div style="font-size:11px; font-family:'JetBrains Mono',monospace; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Key insight</div>
+            <p style="font-size:13px; color:#aaa; line-height:1.6;">
+              They're not bad leads. They just dropped off. A well-timed call is all it takes to bring them back.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — Layer 3 -->
+  <div class="slide" id="s3">
+    <div class="slide-inner">
+      <div class="eyebrow">The System — Layer 3</div>
+      <h2 style="margin-bottom:28px;">The leads who aren't<br>ready yet — <span class="green">still convert.</span></h2>
+      <div class="grid-2" style="gap:28px; align-items:start;">
+        <div>
+          <div class="step-card green-card">
+            <div class="step-num green-num">03</div>
+            <h3>Long-Term Nurture</h3>
+            <div class="sub green-sub">Automated Value Sequence</div>
+            <ul class="check-list">
+              <li class="green-check">Remaining leads enter an automated email sequence</li>
+              <li class="green-check">Education, case studies, social proof over time</li>
+              <li class="green-check">No manual follow-up needed</li>
+            </ul>
+          </div>
+          <div style="margin-top:20px; padding:16px 20px; background:var(--positive-light); border:1.5px solid var(--positive); border-radius:12px;">
+            <div class="stat-num">~10%</div>
+            <div class="stat-label" style="margin-top:6px;">of remaining leads convert over time —<br>essentially free revenue from leads already paid for</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
+          <div style="padding:20px; background:var(--card-bg); border:1.5px solid var(--border); border-radius:14px;">
+            <div style="font-size:11px; font-family:'JetBrains Mono',monospace; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">The three layers</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:center; gap:10px; font-size:13px;">
+                <span style="width:22px; height:22px; border-radius:6px; background:var(--positive-light); border:1px solid var(--positive); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--positive); flex-shrink:0;">01</span>
+                Instant response → catch them immediately
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; font-size:13px;">
+                <span style="width:22px; height:22px; border-radius:6px; background:var(--positive-light); border:1px solid var(--positive); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--positive); flex-shrink:0;">02</span>
+                Lead recovery → catch the ones who slipped
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; font-size:13px;">
+                <span style="width:22px; height:22px; border-radius:6px; background:var(--positive-light); border:1px solid var(--positive); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--positive); flex-shrink:0;">03</span>
+                Long-term nurture → catch the ones who aren't ready yet
+              </div>
+            </div>
+          </div>
+          <div class="callout">
+            Most businesses only implement Layer 1. The real lift happens when all three work together.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — The Result -->
+  <div class="slide" id="s4">
+    <div class="slide-inner">
+      <div class="eyebrow">The Result</div>
+      <h2 style="margin-bottom:8px;">Built in layers.<br><span class="green">Better results at every step.</span></h2>
+      <p style="margin-bottom:32px; font-size:14px; color:#555;">Real numbers from a live client engagement.</p>
+      <div class="grid-3" style="gap:16px; margin-bottom:28px;">
+        <div class="stat-block" style="border-color:var(--positive);">
+          <div class="stat-num">400+</div>
+          <div class="stat-label">calls recovered<br>by Voice AI alone</div>
+        </div>
+        <div class="stat-block" style="border-color:var(--positive);">
+          <div class="stat-num">10%</div>
+          <div class="stat-label">of cold leads convert<br>through long-term nurture</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num" style="color:#e5e7eb; font-size:32px;">3 layers</div>
+          <div class="stat-label">working together —<br>zero extra headcount</div>
+        </div>
+      </div>
+      <div style="padding:20px 24px; background:var(--card-bg); border:1.5px solid var(--border); border-radius:14px; max-width:680px;">
+        <p style="font-size:14px; color:#888; line-height:1.75;">
+          Want this system in your business?<br>
+          <span style="color:var(--positive);">Book a call and we'll show you how it works.</span>
+        </p>
+      </div>
+      <p class="cursive" style="margin-top:24px;">Thomas Filippa · Arcaflow AI</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.nav-dot');
+  const counter = document.getElementById('slide-counter');
+  const fill = document.getElementById('progress-fill');
+  const total = slides.length;
+  let current = 0;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = Math.max(0, Math.min(n, total - 1));
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    fill.style.width = ((current + 1) / total * 100) + '%';
+  }
+
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(current - 1);
+  });
+
+  let tx = null;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    tx = null;
+  });
+
+  goTo(0);
+</script>
+</body>
+</html>
