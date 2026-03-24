@@ -1,0 +1,170 @@
+{
+  "slug": "alessandro-cosentini",
+  "client": "Alessandro Cosentini",
+  "company": "Marketing Agency",
+  "service": "Fractional CMO — Part-Time",
+  "date": "2026-03-24",
+  "language": "en",
+  "challenges": [
+    {
+      "area": "No senior oversight on advertiser output",
+      "impact": "The advertiser operates without a clear performance standard or accountability loop — campaigns run but no one is holding results against targets"
+    },
+    {
+      "area": "Coordination bottleneck sits with the owner",
+      "impact": "Alessandro spends time managing the advertiser directly, pulling him out of growth work and creating a single point of failure"
+    },
+    {
+      "area": "Sales is unstructured",
+      "impact": "No consistent pipeline process or follow-up system — deals stall or go cold because there's no one actively pushing them forward"
+    },
+    {
+      "area": "No performance reporting layer",
+      "impact": "Without weekly data synthesis, decisions are reactive — there's no clear view of what's working, what's not, and where to focus"
+    }
+  ],
+  "approach": {
+    "body": "The core problem is structural: Alessandro is doing both the CEO job and the CMO job simultaneously. Coordinating advertisers, reviewing performance, and managing sales all require different bandwidth — and they're all sitting on one person's plate.\n\nThe solution is a part-time CMO layer: a dedicated point of accountability between Alessandro and his advertiser, a structured sales process that moves deals forward without his constant attention, and a weekly reporting system that makes the whole operation legible at a glance.\n\nAt 10–15 hours per month, this is designed to give maximum leverage — senior oversight and process, not execution overload.",
+    "points": [
+      {
+        "label": "Advertiser Coordination",
+        "description": "Weekly check-ins, performance feedback, and brief templates — the advertiser gets clear direction and Alessandro gets his time back"
+      },
+      {
+        "label": "Sales Process",
+        "description": "Pipeline review, follow-up sequences, and call support — deals move forward without the owner chasing every one manually"
+      },
+      {
+        "label": "Weekly Reporting Dashboard",
+        "description": "Automated Ads Manager data pull via Claude Code — spend, leads, CPL, ROAS delivered every Monday with clear recommendations"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "title": "Advertiser Coordination & Accountability",
+      "items": [
+        {
+          "activity": "Weekly 30-min check-in with the advertiser",
+          "benefit": "Clear brief, targets reviewed, blockers surfaced before they become problems — 2h/month"
+        },
+        {
+          "activity": "Ad performance review + written feedback",
+          "benefit": "Advertiser receives structured, data-backed direction — not just gut feedback — 2h/month"
+        },
+        {
+          "activity": "Campaign brief templates + feedback loops",
+          "benefit": "Standardises how work gets briefed, reviewed, and approved — removes ambiguity — 1h/month"
+        }
+      ]
+    },
+    {
+      "title": "Sales Process & Pipeline",
+      "items": [
+        {
+          "activity": "Monthly pipeline review with Alessandro",
+          "benefit": "Every deal gets a status, a next action, and an owner — nothing sits idle — 1h/month"
+        },
+        {
+          "activity": "Follow-up sequences + outreach templates",
+          "benefit": "Deals that go quiet get re-engaged — fewer leads lost to inaction — 2h/month"
+        },
+        {
+          "activity": "Sales call support (1–2 calls/month)",
+          "benefit": "Alessandro has a senior voice on high-value calls, improving close rate — 1–2h/month"
+        }
+      ]
+    },
+    {
+      "title": "Weekly Performance Dashboard",
+      "items": [
+        {
+          "activity": "Automated data pull from Ads Manager via Claude Code",
+          "benefit": "Raw performance data collected weekly without manual exports — 1h/month"
+        },
+        {
+          "activity": "Formatted weekly report — spend, leads, CPL, ROAS",
+          "benefit": "Alessandro sees exactly where money is going and what it's producing, every week — 1h/month"
+        },
+        {
+          "activity": "Insights + recommendations layer",
+          "benefit": "Not just data — a clear 'here's what to do about it' for the week ahead — 1h/month"
+        }
+      ]
+    },
+    {
+      "title": "CMO Strategy & Direction",
+      "items": [
+        {
+          "activity": "Monthly strategy call with Alessandro",
+          "benefit": "Align on priorities, review what worked, set direction for the month ahead — 1h/month"
+        },
+        {
+          "activity": "Campaign direction + channel recommendations",
+          "benefit": "Ensures the advertiser is working on the right things, not just busy things — 1h/month"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Weekly — Performance Dashboard", "duration": "Every Monday" },
+    { "phase": "Weekly — Advertiser Check-in", "duration": "30 min, every week" },
+    { "phase": "Monthly — Pipeline Review + Strategy Call", "duration": "First week of month" },
+    { "phase": "Monthly Commitment", "duration": "10–15 hours" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "$[PRICE]/month",
+    "roi_framing": "One recovered deal or one optimised campaign typically covers the monthly retainer. Senior CMO oversight without the full-time salary.",
+    "items": [
+      { "deliverable": "Advertiser Coordination & Accountability", "price": null },
+      { "deliverable": "Sales Process & Pipeline", "price": null },
+      { "deliverable": "Weekly Performance Dashboard", "price": null },
+      { "deliverable": "CMO Strategy & Direction", "price": null }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "Claude Code ads dashboard setup",
+      "detail": "Automated Ads Manager data pull built and handed over — runs weekly without manual input"
+    },
+    {
+      "bonus": "30-day fit guarantee",
+      "detail": "If after the first month it's not the right fit, we part ways cleanly — no lock-in"
+    },
+    {
+      "bonus": "Async availability",
+      "detail": "Questions and decisions don't wait for the monthly call — respond within 24h on WhatsApp/Slack"
+    }
+  ],
+  "final_total": "$[PRICE]/month",
+  "next_steps": [
+    "Confirm — Formal acceptance of this proposal and scope",
+    "Payment — First month's retainer to begin",
+    "Onboarding — Share access to Ads Manager, CRM/pipeline tool, and reporting platforms",
+    "Kick-off call — 60 minutes to align on current state of advertiser, pipeline, and priorities before Day 1"
+  ],
+  "terms": [
+    {
+      "area": "Payment",
+      "detail": "Monthly retainer, billed at the start of each month"
+    },
+    {
+      "area": "Scope",
+      "detail": "Part-time CMO oversight as defined above. Excluded: ad spend (at client's expense), content production, direct platform management, paid tool subscriptions"
+    },
+    {
+      "area": "Cancellation",
+      "detail": "30-day written notice required to end the engagement"
+    },
+    {
+      "area": "Ownership",
+      "detail": "All templates, dashboards, and systems built during the engagement are client property"
+    },
+    {
+      "area": "Prerequisites",
+      "detail": "Ads Manager access and current pipeline/CRM must be shared before Day 1"
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
