@@ -132,11 +132,11 @@ export default function InvestmentSlide({ data }: Props) {
           {heading}
         </h2>
 
-        {data.investment.type === "single" ? (
+        {data.investment && (data.investment.type === "single" ? (
           <SingleInvestment inv={data.investment} lang={data.language} />
         ) : (
           <MultiInvestment inv={data.investment} lang={data.language} />
-        )}
+        ))}
       </div>
     </div>
   );
