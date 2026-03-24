@@ -81,6 +81,7 @@ export interface ProposalData {
   investment?: Investment;
   bonuses: Bonus[];
   final_total: string;
+  bonus_tagline?: string;
   next_steps: string[];
   terms: Term[];
   contact: string;

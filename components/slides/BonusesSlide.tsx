@@ -12,7 +12,9 @@ export default function BonusesSlide({ data }: Props) {
   const finalLabel =
     data.language === "it" ? "TOTALE FINALE (CON BONUS)" : "FINAL TOTAL (INCL. BONUSES)";
   const tagline =
-    data.language === "it"
+    data.bonus_tagline !== undefined
+      ? data.bonus_tagline
+      : data.language === "it"
       ? "Una sola prenotazione ripaga l'intero investimento."
       : "One booking covers the entire investment.";
 
