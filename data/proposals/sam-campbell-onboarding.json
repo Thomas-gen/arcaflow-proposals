@@ -1,0 +1,172 @@
+{
+  "slug": "sam-campbell-onboarding",
+  "client": "Sam Campbell",
+  "company": "Arcaflow AI — Partner Onboarding",
+  "service": "Cold Calling Partner — Deck Builders",
+  "date": "2026-03-24",
+  "language": "en",
+  "challenges": [
+    {
+      "area": "Deck builders miss calls on the job site",
+      "impact": "Every missed call is a $10K–$25K job going to a competitor who picked up. They already know this — you're just showing them the number"
+    },
+    {
+      "area": "No automated follow-up in the industry",
+      "impact": "Most contractors follow up manually — or don't at all. The market is wide open for what we offer"
+    },
+    {
+      "area": "We've already proven it works",
+      "impact": "A roofing client booked 550+ calls that would have gone to voicemail and died. Same problem, same solution — different trade"
+    },
+    {
+      "area": "Spring is peak season",
+      "impact": "Deck builders are ramping up now. They're feeling the lead pressure. Timing is perfect"
+    }
+  ],
+  "approach": {
+    "body": "Arcaflow AI builds systems that recover missed calls, follow up automatically, and book jobs — without anyone on the client's team lifting a finger. We serve local service businesses (roofers, deck builders, HVAC, landscapers) who are great at their trade but losing revenue every day to slow response times.\n\nYour role is the first point of contact. You're not pitching software — you're showing business owners money they're already losing and getting them in front of Thomas for a 20-minute demo. That's it.",
+    "points": [
+      {
+        "label": "The Vertical",
+        "description": "Deck builders — local, established, high inbound call volume, systematically underserved. Start here, expand to HVAC/roofing/landscaping once proven"
+      },
+      {
+        "label": "The Story",
+        "description": "Roofing client, same problem — booked 550+ calls that would have died. Use this on every call"
+      },
+      {
+        "label": "The Geography",
+        "description": "US-based businesses, starting in TX, FL, NC, GA, OH — high housing activity, peak outdoor season"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "title": "Week 1 — Ramp & Learn",
+      "items": [
+        {
+          "activity": "Read the script 3x aloud before your first call",
+          "benefit": "It needs to feel natural, not scripted — reading it aloud is the only way to get there"
+        },
+        {
+          "activity": "50–60 dials/day (not 80 yet)",
+          "benefit": "Week 1 is about getting your rhythm. Results aren't judged until week 2"
+        },
+        {
+          "activity": "Target: 1 discovery call booked",
+          "benefit": "One booked call in week 1 means the system is working — build from there"
+        },
+        {
+          "activity": "Log every dial in Nextdial, every booked call in GHL",
+          "benefit": "Clean tracking from day 1 — this is how we measure and improve together"
+        }
+      ]
+    },
+    {
+      "title": "Weeks 3–4 & Beyond — Full Speed",
+      "items": [
+        {
+          "activity": "80+ dials/day",
+          "benefit": "At 80 dials/day across Thu–Sun, the funnel math closes 1 client every 1–2 weeks"
+        },
+        {
+          "activity": "4+ discovery calls booked/week",
+          "benefit": "This is the core output metric — everything else flows from here"
+        },
+        {
+          "activity": "70%+ show rate on booked calls",
+          "benefit": "Quality qualification matters — a no-show is a wasted booking"
+        },
+        {
+          "activity": "Month 2: inbound leads added",
+          "benefit": "Warm leads from paid ads join the pipeline alongside cold — higher close rate, same commission"
+        }
+      ]
+    },
+    {
+      "title": "Your Reference Materials",
+      "items": [
+        {
+          "activity": "ICP Brief — deck-builders-icp.md",
+          "benefit": "Who to call, who to skip, 3 qualifying questions, pain signals to listen for"
+        },
+        {
+          "activity": "Call Script — deck-builders-script.md",
+          "benefit": "Full script from opener to booking — including what to say when they say no"
+        },
+        {
+          "activity": "Objection Handling — objection-handling.md",
+          "benefit": "7 word-for-word responses to the most common pushbacks"
+        },
+        {
+          "activity": "Lead List — 500+ deck builders (TX, FL, NC, GA, OH)",
+          "benefit": "Provided before Day 1 — loaded into Nextdial, ready to dial"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Weeks 1–2 — Ramp", "duration": "$50 per booked call" },
+    { "phase": "Weeks 3–4 — Full speed", "duration": "$70 per booked call" },
+    { "phase": "Month 2+ — Locked in", "duration": "$100 per booked call" },
+    { "phase": "KPI Unlock (Month 2)", "duration": "15% per close" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "Commission-only",
+    "roi_framing": "Conservative month 1 (3 booked calls/week): ~$720 in call commissions + $500 per close (10%). Hit KPIs in month 2: up to $4,000/month between cold + inbound leads.",
+    "items": [
+      { "deliverable": "Per booked discovery call — Weeks 1–2", "price": "$50" },
+      { "deliverable": "Per booked discovery call — Weeks 3–4", "price": "$70" },
+      { "deliverable": "Per booked discovery call — Month 2+", "price": "$100" },
+      { "deliverable": "Per closed client — Month 1", "price": "10% of setup fee" },
+      { "deliverable": "Per closed client — Month 2", "price": "12% of setup fee" },
+      { "deliverable": "Per closed client — KPIs met", "price": "15% of setup fee" }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "Month 2 — Inbound leads",
+      "detail": "Warm leads from paid ads added to your pipeline alongside cold calls — higher close rate, same commission structure"
+    },
+    {
+      "bonus": "15% KPI unlock",
+      "detail": "Hit 80+ dials/day, 4+ calls/week, 70%+ show rate, and 1+ close in a month — you're at 15% from that point forward"
+    },
+    {
+      "bonus": "Long-term path",
+      "detail": "As Arcaflow scales, your territory expands and you build a team under you. The callers who stick around get the best deals"
+    }
+  ],
+  "final_total": "Your earnings are uncapped",
+  "next_steps": [
+    "Read the script 3x aloud before your first call",
+    "Review the ICP brief — know who to call and who to skip",
+    "Get access to Nextdial and load the lead list",
+    "Make your first 20 dials — not to book, just to warm up",
+    "Text Thomas after your first session"
+  ],
+  "terms": [
+    {
+      "area": "Pay structure",
+      "detail": "Commission-only. Per booked call (qualified, attends) + per closed client"
+    },
+    {
+      "area": "Qualified call definition",
+      "detail": "Lead agrees to a discovery call, provides email, and shows up. No-shows do not count"
+    },
+    {
+      "area": "KPI review",
+      "detail": "Reviewed monthly. All 4 KPIs must be hit to unlock the 15% rate: 80+ dials/day, 4+ calls/week, 70%+ show rate, 1+ close"
+    },
+    {
+      "area": "Inbound leads",
+      "detail": "Added from month 2 subject to ad campaign performance. Thomas controls allocation"
+    },
+    {
+      "area": "GHL logging",
+      "detail": "Every booked discovery call must be logged in GHL immediately with name, phone, and email to qualify for commission"
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
