@@ -324,7 +324,7 @@
       <div class="eyebrow">
         <span class="label">Case Study · Roofing · United States</span>
       </div>
-      <h1>476 calls booked.<br><span class="accent">Zero extra staff.</span></h1>
+      <h1>576 calls booked.<br><span class="accent">Zero extra staff.</span></h1>
       <p style="font-size:16px; margin-top:18px; max-width:580px; line-height:1.65;">
         A roofing company was losing $10K–$25K jobs every week — not because of bad service, but because nobody answered the phone when crews were on job sites. We fixed it with a 3-layer AI system.
       </p>
@@ -384,10 +384,10 @@
         <div class="step-card active-step">
           <div class="step-num">LAYER 02</div>
           <div style="font-size:22px; margin-bottom:10px;">🎙️</div>
-          <h3 style="margin-bottom:8px;">Voice AI Bot</h3>
-          <p style="font-size:13px;">Qualified leads get called back by an AI voice agent. It handles the conversation naturally, answers questions, and books the appointment directly into the calendar.</p>
+          <h3 style="margin-bottom:8px;">Voice AI — Inbound + Outbound</h3>
+          <p style="font-size:13px;">Works both ways: answers inbound calls live, AND proactively calls back leads who didn't book through WhatsApp. Handles the conversation naturally and books directly into the calendar.</p>
           <hr/>
-          <p style="font-size:12px; color: var(--positive);">Higher conversion than text alone — voice closes</p>
+          <p style="font-size:12px; color: var(--positive);">Recovers 30% of leads who didn't book via WhatsApp</p>
         </div>
         <div class="step-arrow">→</div>
         <div class="step-card">
@@ -402,9 +402,93 @@
     </div>
   </div>
 
-  <!-- ===== SLIDE 4 — BEFORE vs AFTER ===== -->
+  <!-- ===== SLIDE 4 — ECOSYSTEM DIAGRAM ===== -->
   <div class="slide" id="s4">
     <canvas class="slide-canvas" id="c4"></canvas>
+    <div class="slide-inner">
+      <div class="label">The full system</div>
+      <h2 style="margin-bottom:20px;">One CRM. One AI hub.<br><span class="accent">Every lead covered — across every channel.</span></h2>
+      <!-- Ecosystem diagram -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+
+        <!-- Row 1: Lead sources -->
+        <div style="display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap;">
+          <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-right:4px;">Lead sources</div>
+          <div style="background:#1c1a0a; border:1.5px solid #b8860b; border-radius:8px; padding:6px 14px; font-size:12px; font-weight:600; color:#e6c200;">📞 Missed Calls</div>
+          <div style="background:#1c1a0a; border:1.5px solid #b8860b; border-radius:8px; padding:6px 14px; font-size:12px; font-weight:600; color:#e6c200;">🌐 Website</div>
+          <div style="background:#1c1a0a; border:1.5px solid #b8860b; border-radius:8px; padding:6px 14px; font-size:12px; font-weight:600; color:#e6c200;">📣 Paid Ads</div>
+          <div style="background:#1c1a0a; border:1.5px solid #b8860b; border-radius:8px; padding:6px 14px; font-size:12px; font-weight:600; color:#e6c200;">📱 Social Media</div>
+        </div>
+
+        <!-- Arrow down -->
+        <div style="text-align:center; color:var(--muted); font-size:16px; line-height:1;">↓</div>
+
+        <!-- Row 2: CRM -->
+        <div style="text-align:center;">
+          <div style="display:inline-block; background:var(--card-bg); border:2px solid #888; border-radius:10px; padding:8px 28px; font-size:13px; font-weight:800; color:var(--text); letter-spacing:0.5px;">CRM — Central Hub</div>
+        </div>
+
+        <!-- Arrow down -->
+        <div style="text-align:center; color:var(--muted); font-size:16px; line-height:1;">↓</div>
+
+        <!-- Row 3: AI Agents hub -->
+        <div style="text-align:center;">
+          <div style="display:inline-block; background:var(--positive-light); border:2px solid var(--positive); border-radius:10px; padding:8px 28px; font-size:13px; font-weight:800; color:var(--positive);">AI Agents</div>
+        </div>
+
+        <!-- Arrow down + branches label -->
+        <div style="text-align:center; color:var(--muted); font-size:16px; line-height:1;">↓</div>
+
+        <!-- Row 4: 5 agent types -->
+        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:8px;">
+          <div style="background:var(--positive-light); border:1.5px solid var(--positive); border-radius:8px; padding:10px 8px; text-align:center;">
+            <div style="font-size:14px; margin-bottom:4px;">💬</div>
+            <div style="font-size:11px; font-weight:700; color:var(--positive); line-height:1.3;">WhatsApp / IG / FB / SMS</div>
+          </div>
+          <div style="background:var(--positive-light); border:1.5px solid var(--positive); border-radius:8px; padding:10px 8px; text-align:center;">
+            <div style="font-size:14px; margin-bottom:4px;">🎙️</div>
+            <div style="font-size:11px; font-weight:700; color:var(--positive); line-height:1.3;">Voice AI Inbound + Outbound</div>
+          </div>
+          <div style="background:var(--positive-light); border:1.5px solid var(--positive); border-radius:8px; padding:10px 8px; text-align:center;">
+            <div style="font-size:14px; margin-bottom:4px;">🤖</div>
+            <div style="font-size:11px; font-weight:700; color:var(--positive); line-height:1.3;">Website Chatbot</div>
+          </div>
+          <div style="background:var(--positive-light); border:1.5px solid var(--positive); border-radius:8px; padding:10px 8px; text-align:center;">
+            <div style="font-size:14px; margin-bottom:4px;">🔄</div>
+            <div style="font-size:11px; font-weight:700; color:var(--positive); line-height:1.3;">AI Follow-Up Agent</div>
+          </div>
+          <div style="background:var(--positive-light); border:1.5px solid var(--positive); border-radius:8px; padding:10px 8px; text-align:center;">
+            <div style="font-size:14px; margin-bottom:4px;">📧</div>
+            <div style="font-size:11px; font-weight:700; color:var(--positive); line-height:1.3;">Email Marketing</div>
+          </div>
+        </div>
+
+        <!-- Arrow down -->
+        <div style="text-align:center; color:var(--muted); font-size:16px; line-height:1;">↓</div>
+
+        <!-- Row 5: Outcomes -->
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+          <div style="background:var(--card-bg); border:1.5px solid var(--border); border-radius:8px; padding:10px 12px;">
+            <div style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Booking System</div>
+            <p style="font-size:11px;">Lead Sales Pipeline + auto-reminders, cancellations, no-shows</p>
+          </div>
+          <div style="background:var(--card-bg); border:1.5px solid var(--border); border-radius:8px; padding:10px 12px;">
+            <div style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Lead Reactivation</div>
+            <p style="font-size:11px;">Cold leads re-engaged automatically — weeks or months later</p>
+          </div>
+          <div style="background:var(--positive-light); border:1.5px solid var(--positive); border-radius:8px; padding:10px 12px;">
+            <div style="font-size:11px; font-weight:700; color:var(--positive); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Result for All Seasons Roof</div>
+            <p style="font-size:11px; color:var(--text);">576 booked appointments. No extra staff. Running 24/7.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SLIDE 5 — BEFORE vs AFTER ===== -->
+  <div class="slide" id="s5">
+    <canvas class="slide-canvas" id="c5"></canvas>
     <div class="slide-inner">
       <div class="label">The transformation</div>
       <h2 style="margin-bottom:24px;">What changed for<br>All Seasons Roof</h2>
@@ -441,9 +525,9 @@
     </div>
   </div>
 
-  <!-- ===== SLIDE 5 — THE NUMBERS ===== -->
-  <div class="slide" id="s5">
-    <canvas class="slide-canvas" id="c5"></canvas>
+  <!-- ===== SLIDE 6 — THE NUMBERS ===== -->
+  <div class="slide" id="s6">
+    <canvas class="slide-canvas" id="c6"></canvas>
     <div class="slide-inner">
       <div class="label">The results</div>
       <h2 style="margin-bottom:28px;">Numbers that changed<br>how they run the business</h2>
@@ -472,13 +556,13 @@
     </div>
   </div>
 
-  <!-- ===== SLIDE 6 — INSIDE THE VOICE CALL ===== -->
-  <div class="slide" id="s6">
-    <canvas class="slide-canvas" id="c6"></canvas>
+  <!-- ===== SLIDE 7 — INSIDE THE VOICE CALL ===== -->
+  <div class="slide" id="s7">
+    <canvas class="slide-canvas" id="c7"></canvas>
     <div class="slide-inner">
       <div class="label">How it sounds</div>
-      <h2 style="margin-bottom:8px;">The AI calls them back.<br><span class="accent">It sounds like your best receptionist.</span></h2>
-      <p style="margin-bottom:24px; max-width:560px;">Here's how a real conversation flows — the AI handles qualification, objections, and booking without any human in the loop.</p>
+      <h2 style="margin-bottom:8px;">Inbound or outbound —<br><span class="accent">the AI handles both sides of the call.</span></h2>
+      <p style="margin-bottom:24px; max-width:560px;">Answers inbound calls live, and proactively calls back leads who didn't respond to WhatsApp. Here's how the conversation flows — qualification, objections, booking, all without a human.</p>
       <div class="grid-2" style="gap:28px; align-items:start;">
         <div style="display:flex; flex-direction:column; gap:10px;">
           <div class="bubble-row">
@@ -522,9 +606,9 @@
     </div>
   </div>
 
-  <!-- ===== SLIDE 7 — ANY TRADE ===== -->
-  <div class="slide" id="s7">
-    <canvas class="slide-canvas" id="c7"></canvas>
+  <!-- ===== SLIDE 8 — ANY TRADE ===== -->
+  <div class="slide" id="s8">
+    <canvas class="slide-canvas" id="c8"></canvas>
     <div class="slide-inner">
       <div class="label">The bigger picture</div>
       <h2 style="margin-bottom:10px;">If you have inbound calls<br>and a field crew, <span class="accent">this system works.</span></h2>
@@ -533,7 +617,7 @@
         <div class="industry-card highlight">
           <div class="icon">🏠</div>
           <h4>Roofing</h4>
-          <p>Proven. 476 calls booked. Active deployment.</p>
+          <p>Proven. 576 calls booked. Active deployment.</p>
         </div>
         <div class="industry-card">
           <div class="icon">🪵</div>
@@ -574,9 +658,9 @@
     </div>
   </div>
 
-  <!-- ===== SLIDE 8 — CTA ===== -->
-  <div class="slide" id="s8">
-    <canvas class="slide-canvas" id="c8"></canvas>
+  <!-- ===== SLIDE 9 — CTA ===== -->
+  <div class="slide" id="s9">
+    <canvas class="slide-canvas" id="c9"></canvas>
     <div class="slide-inner" style="text-align:center; max-width:640px; margin:0 auto;">
       <div class="label" style="margin-bottom:16px;">Ready to recover your missed calls?</div>
       <h1 style="font-size:clamp(30px,5vw,50px); margin-bottom:20px;">
@@ -607,7 +691,7 @@
 </div><!-- /slides -->
 
 <script>
-  const TOTAL = 8;
+  const TOTAL = 9;
   let current = 1;
   let drawMode = false;
   const drawings = {};
@@ -615,8 +699,8 @@
   let lastX = 0, lastY = 0;
 
   const slideLabels = [
-    'Overview', 'The Problem', 'The System', 'Before vs After',
-    'The Numbers', 'Voice Demo', 'Any Trade', 'Book a Call'
+    'Overview', 'The Problem', 'The System', 'Full Ecosystem',
+    'Before vs After', 'The Numbers', 'Voice Demo', 'Any Trade', 'Book a Call'
   ];
 
   const dotsEl = document.getElementById('nav-dots');
