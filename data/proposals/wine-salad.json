@@ -1,0 +1,171 @@
+{
+  "slug": "wine-salad",
+  "client": "Wine Salad",
+  "company": "Wine Salad",
+  "service": "Full Infrastructure — GHL Rebuild + AI Voice Agent + AI Chatbot + Data Intelligence",
+  "date": "2026-03-30",
+  "language": "it",
+  "approach": {
+    "body": "Wine Salad ha dimostrato una crescita eccezionale — 2.500 studenti in 3 anni. Il problema non è la domanda: è che l'infrastruttura non ha tenuto il passo.\n\nCostruire AI Agents su pipeline caotiche produce sistemi fragili. Per questo, il progetto parte dal basso: prima si ripulisce e ricostruisce la fondazione GHL, poi si aggiungono AI Voice e Chatbot su una base solida, poi si rende tutto misurabile in tempo reale.",
+    "points": [
+      {
+        "label": "Fase 1 — Fondazione GHL",
+        "description": "Audit completo, ricostruzione pipeline, ottimizzazione workflow, connessione di tutte le integrazioni. La base deve essere solida prima di aggiungere AI."
+      },
+      {
+        "label": "Fase 2 — AI Voice + Chatbot",
+        "description": "Voice Agent per qualificazione, booking e recupero pagamenti. Chatbot su Instagram DM, SMS e sito per risposta immediata 24/7."
+      },
+      {
+        "label": "Fase 3 — Data Intelligence",
+        "description": "Dashboard Google Sheets collegate a GHL. Ogni area del business visibile in tempo reale — decisioni basate su dati, non intuizioni."
+      }
+    ]
+  },
+  "challenges": [
+    {
+      "area": "GHL non scalato con la crescita",
+      "impact": "Il setup attuale è stato costruito per una realtà più piccola. Pipeline incomplete e workflow rotti rallentano un business che ha già dimostrato di poter crescere."
+    },
+    {
+      "area": "Lead qualificati manualmente",
+      "impact": "Instagram DM, email e SMS vengono gestiti a mano. Ogni ora di ritardo nella risposta riduce il tasso di conversione."
+    },
+    {
+      "area": "Follow-up e recupero pagamenti umani",
+      "impact": "Il team gestisce tutto — follow-up, reminder, recupero pagamenti. È un collo di bottiglia che peggiora a ogni nuovo studente acquisito."
+    },
+    {
+      "area": "Nessun Chatbot sui canali di acquisizione",
+      "impact": "Prospect che aspettano, domande senza risposta, opportunità perse — su Instagram, SMS e website."
+    },
+    {
+      "area": "Zero visibilità sui dati",
+      "impact": "Senza dashboard live, ogni decisione operativa richiede estrazione manuale. Non si può ottimizzare ciò che non si misura."
+    }
+  ],
+  "parts": [
+    {
+      "title": "GHL Foundation: Audit, Ricostruzione e Integrazioni",
+      "items": [
+        {
+          "activity": "Audit completo del setup GHL — pipeline, workflow, automazioni, funnel, membership",
+          "benefit": "Fotografia precisa di cosa funziona e cosa va eliminato. Nessuna ricostruzione alla cieca."
+        },
+        {
+          "activity": "Ottimizzazione workflow esistenti e costruzione pipeline strutturate",
+          "benefit": "Lead acquisition, vendita, onboarding, delivery corso e recupero pagamenti — ogni contatto ha un percorso chiaro."
+        },
+        {
+          "activity": "Connessione integrazioni — Instagram, email, SMS, WhatsApp, Google Sheets, Stripe",
+          "benefit": "Un unico hub operativo. Nessun dato perso, nessuna azione manuale ridondante."
+        }
+      ]
+    },
+    {
+      "title": "AI Voice Agent: Qualificazione, Prenotazione e Recupero Pagamenti",
+      "items": [
+        {
+          "activity": "GHL AI Voice Agent inbound + outbound con flussi per qualificazione, booking e recupero",
+          "benefit": "Il sistema chiama e segue i lead automaticamente — il team umano interviene solo quando conta davvero."
+        },
+        {
+          "activity": "Training sul tono di voce Wine Salad e pubblico target (sommelier, ristoratori, hospitality)",
+          "benefit": "L'agente parla come Wine Salad. I prospect non notano la differenza."
+        },
+        {
+          "activity": "Monitoraggio performance — call completion rate, conversione ad appuntamento, drop-off",
+          "benefit": "I dati di ogni chiamata informano il miglioramento continuo del sistema."
+        }
+      ]
+    },
+    {
+      "title": "AI Chatbot Agent: Instagram DM, SMS e Website Chat",
+      "items": [
+        {
+          "activity": "GHL AI Chatbot su Instagram DM, SMS e sito con flussi per qualificazione e FAQ",
+          "benefit": "Risposta immediata 24/7 — anche a mezzanotte, anche durante i webinar."
+        },
+        {
+          "activity": "Integrazione con pipeline GHL — ogni outcome conversazione aggiorna lo stage del contatto",
+          "benefit": "Pipeline sempre aggiornata senza tocchi manuali. Il team vede lo stato reale di ogni lead."
+        },
+        {
+          "activity": "Training su contenuti Wine Salad, FAQ, obiezioni e offerta formativa",
+          "benefit": "Risposte accurate e specifiche — non risposte generiche che fanno perdere credibilità."
+        }
+      ]
+    },
+    {
+      "title": "Data Intelligence: Dashboard e Documentazione",
+      "items": [
+        {
+          "activity": "Dashboard Google Sheets automatizzate — funnel, vendite, revenue, delivery, recupero pagamenti",
+          "benefit": "Ogni area del business visibile in tempo reale. Decisioni basate su dati, non intuizioni."
+        },
+        {
+          "activity": "SOP e documentazione completa in italiano di ogni sistema",
+          "benefit": "Il know-how rimane in azienda. Se il team cambia, i sistemi continuano a funzionare."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Parte 1: GHL Foundation", "duration": "2 settimane" },
+    { "phase": "Parte 2: AI Voice Agent", "duration": "1–2 settimane" },
+    { "phase": "Parte 3: AI Chatbot Agent", "duration": "1–2 settimane" },
+    { "phase": "Parte 4: Data Intelligence & Documentazione", "duration": "1 settimana" },
+    { "phase": "Totale (Go-Live)", "duration": "~ 5–7 settimane" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "€[PRICE]",
+    "roi_framing": "Un sistema che recupera anche solo 2–3 iscrizioni al mese per follow-up tardivo o chatbot non attivo copre l'investimento nel primo trimestre.",
+    "items": [
+      { "deliverable": "Parte 1: GHL Foundation", "price": null },
+      { "deliverable": "Parte 2: AI Voice Agent", "price": null },
+      { "deliverable": "Parte 3: AI Chatbot Agent", "price": null },
+      { "deliverable": "Parte 4: Data Intelligence & Documentazione", "price": null }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "Monitoraggio esteso post-consegna (30 giorni)",
+      "detail": "Analisi delle performance reali nelle prime 4 settimane live — aggiustamenti inclusi, non quotati separatamente"
+    },
+    {
+      "bonus": "Libreria di prompt e flussi conversazionali riutilizzabili",
+      "detail": "Tutti i flussi Voice e Chatbot documentati e modulari — modificabili internamente senza dipendere da noi"
+    },
+    {
+      "bonus": "Sessione di ottimizzazione a 60 giorni",
+      "detail": "Call di revisione a 60 giorni dalla consegna — analizziamo i dati e tracciamo le priorità di miglioramento"
+    },
+    {
+      "bonus": "Partner Rate",
+      "detail": "Sconto applicato a questa prima collaborazione"
+    }
+  ],
+  "final_total": "€[FINAL PRICE]",
+  "next_steps": [
+    "Conferma — Accettazione formale della proposta e dello scope",
+    "Acconto — Pagamento concordato per avvio immediato",
+    "Onboarding — Accesso a GHL, Instagram, WhatsApp Business, Google Sheets e Stripe",
+    "Kick-off call — Allineamento su priorità e timeline prima del Giorno 1"
+  ],
+  "terms": [
+    {
+      "area": "Scope",
+      "detail": "Include: GHL rebuild, AI Voice Agent, AI Chatbot Agent, dashboard Google Sheets, SOP. Escluso: gestione ads, produzione contenuti, sviluppo web custom, costi API/SMS/telefonia a carico del cliente."
+    },
+    {
+      "area": "Supporto post-consegna",
+      "detail": "Bug fix e aggiustamenti inclusi per 30 giorni. Richieste fuori scope quotate separatamente."
+    },
+    {
+      "area": "Proprietà",
+      "detail": "Tutti i sistemi sono di proprietà di Wine Salad. Nessun lock-in con Arcaflow."
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
