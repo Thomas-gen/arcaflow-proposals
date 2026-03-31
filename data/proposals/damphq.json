@@ -87,7 +87,7 @@
   ],
   "investment": {
     "type": "single",
-    "total": "£2,100",
+    "total": "£2,200",
     "roi_framing": "A single damp proofing installation job covers this investment many times over. The agent pays for itself the first time it books a job you would have otherwise missed.",
     "items": [
       { "deliverable": "Part 1: GHL Audit & Configuration", "price": null },
@@ -105,7 +105,7 @@
       "detail": "We listen to real calls, review booking rates, and tune the prompt after go-live. This is where the agent goes from good to reliable — included at no extra cost"
     }
   ],
-  "final_total": "£2,100",
+  "final_total": "£2,200",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
     "Payment — 100% upfront, details provided on confirmation",
