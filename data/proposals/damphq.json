@@ -1,0 +1,122 @@
+{
+  "slug": "damphq",
+  "client": "Miles Procter",
+  "company": "DampHQ",
+  "service": "Inbound AI Voice Agent — Damp Proofing",
+  "date": "2026-03-31",
+  "language": "en",
+  "challenges": [
+    {
+      "area": "Inbound calls going unanswered",
+      "impact": "New enquiries and existing customers hit a gap — calls miss or bounce to a busy team member who can't give proper attention"
+    },
+    {
+      "area": "Warranty & customer service handled manually",
+      "impact": "Time-consuming, inconsistent, and availability-dependent — customers expect a fast, professional response whenever they call"
+    },
+    {
+      "area": "GHL not wired to the inbound channel",
+      "impact": "Leads fall through, no automation on call outcomes, no pipeline visibility from inbound calls"
+    },
+    {
+      "area": "Every missed enquiry is real revenue lost",
+      "impact": "At startup stage each inbound call is disproportionately valuable — there's no buffer for missed opportunities"
+    }
+  ],
+  "approach": {
+    "body": "DampHQ doesn't need a complex AI system — it needs a reliable, professional front door that never closes.\n\nAn AI agent that's transparent about being AI removes awkwardness, keeps costs low, and ensures every caller — new enquiry or existing customer chasing a warranty claim — gets a consistent response and lands in the right place.\n\nThe build connects the agent directly to GHL so every call outcome creates an action. No manual data entry, no calls that disappear."
+  },
+  "parts": [
+    {
+      "title": "GHL Audit & Configuration",
+      "items": [
+        {
+          "activity": "Audit existing GHL — pipelines, calendars, tags, automations",
+          "benefit": "Build on what's already working — no redundancy, no conflicts"
+        },
+        {
+          "activity": "Configure inbound pipeline stage and contact tagging",
+          "benefit": "Every caller auto-categorised: new enquiry, existing customer, warranty claim"
+        },
+        {
+          "activity": "Calendar setup + GHL automation triggers on call outcomes",
+          "benefit": "Call ends → action starts. Agent books, CRM updates, no manual follow-up"
+        }
+      ]
+    },
+    {
+      "title": "Inbound AI Voice Agent",
+      "items": [
+        {
+          "activity": "Custom prompt — transparent AI persona (\"Hi, I'm the DampHQ AI assistant\")",
+          "benefit": "Sets expectations from the first second, builds trust, reduces drop-off"
+        },
+        {
+          "activity": "Dual call flow: new enquiry path + existing customer path (warranty, status, general)",
+          "benefit": "One agent handles both use cases — caller reaches the right outcome regardless of why they called"
+        },
+        {
+          "activity": "Live calendar booking — agent books appointments directly into GHL",
+          "benefit": "Enquiries convert to booked calls without a human step in between"
+        }
+      ]
+    },
+    {
+      "title": "n8n Automation Layer",
+      "items": [
+        {
+          "activity": "n8n workflow connecting call outcomes to GHL — contacts created, pipeline updated, follow-up triggered",
+          "benefit": "Every call is captured and acted on automatically — nothing falls through"
+        },
+        {
+          "activity": "Internal alerts on high-priority calls (warranty claims, hot enquiries)",
+          "benefit": "Team is notified instantly for calls that need a human — nothing waits until someone checks CRM"
+        },
+        {
+          "activity": "Post-call SMS/email confirmation triggered by call type",
+          "benefit": "Customer gets an immediate next step after the call ends — professional experience from Day 1"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Part 1: GHL Audit & Configuration", "duration": "3–4 days" },
+    { "phase": "Part 2: Inbound AI Voice Agent", "duration": "5–7 days" },
+    { "phase": "Part 3: n8n Automation Layer", "duration": "3–4 days" },
+    { "phase": "Total (Go-Live)", "duration": "~ 2–3 weeks" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "£2,100",
+    "roi_framing": "A single damp proofing installation job covers this investment many times over. The agent pays for itself the first time it books a job you would have otherwise missed.",
+    "items": [
+      { "deliverable": "Part 1: GHL Audit & Configuration", "price": null },
+      { "deliverable": "Part 2: Inbound AI Voice Agent", "price": null },
+      { "deliverable": "Part 3: n8n Automation Layer", "price": null }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "Backup Twilio Number with Call Rotation",
+      "detail": "Second number set up and auto-rotated — protects against spam flagging, keeps the agent handling volume with zero downtime"
+    },
+    {
+      "bonus": "2 Weeks Free Optimisation Post-Delivery",
+      "detail": "We listen to real calls, review booking rates, and tune the prompt after go-live. This is where the agent goes from good to reliable — included at no extra cost"
+    }
+  ],
+  "final_total": "£2,100",
+  "next_steps": [
+    "Confirm — Formal acceptance of this proposal and scope",
+    "Payment — 100% upfront, details provided on confirmation",
+    "Onboarding — Share access to GHL, Retell, and Twilio to begin setup",
+    "Kick-off call — 30 min to align on call flow priorities and go-live date"
+  ],
+  "terms": [
+    { "area": "Payment", "detail": "100% upfront for projects under £5,000" },
+    { "area": "Scope", "detail": "Includes Parts 1–3 as described. Excluded: ad spend, website dev, content production, ongoing management beyond the 2-week optimisation window. Third-party platform costs (Retell, Twilio usage) at client's expense." },
+    { "area": "Post-delivery", "detail": "Bug fixes and prompt adjustments included for 14 days post-delivery (3 revision rounds). Changes outside original scope quoted separately." },
+    { "area": "Ownership", "detail": "All systems built inside DampHQ's accounts — client property, no lock-in." }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
