@@ -85,16 +85,6 @@
     { "phase": "Parte 3: WhatsApp / SMS Agent", "duration": "3–4 settimane" },
     { "phase": "Totale (Go-Live)", "duration": "~ 3 mesi" }
   ],
-  "investment": {
-    "type": "single",
-    "total": "€[PRICE]",
-    "roi_framing": "Con €25.000/mese su Meta e un target di €1,5M nel 2026, anche un miglioramento del 10% nel tasso di conversione vale €25.000+ all'anno. L'infrastruttura che costruiamo è il moltiplicatore su cui ogni euro di ads già gira.",
-    "items": [
-      { "deliverable": "Parte 1: GHL Audit, Pulizia & Pipeline", "price": null },
-      { "deliverable": "Parte 2: Custom Dashboard & Ottimizzazione Funnel", "price": null },
-      { "deliverable": "Parte 3: WhatsApp / SMS Agent", "price": null }
-    ]
-  },
   "bonuses": [
     {
       "bonus": "Sales Process Review",
@@ -109,7 +99,7 @@
       "detail": "Tariffa riservata per questo progetto — sconto applicato sul prezzo di listino"
     }
   ],
-  "final_total": "€[FINAL PRICE]",
+  "final_total": "",
   "next_steps": [
     "Conferma — Accettazione formale della proposta e dello scope",
     "Acconto — Primo pagamento di €1.900 per avviare il progetto",
