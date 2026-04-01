@@ -28,7 +28,7 @@
       "title": "GHL Audit, Pulizia & Pipeline",
       "items": [
         {
-          "activity": "Audit completo GHL (Paolo) — mapping di ogni pipeline, automation, funnel entry",
+          "activity": "Audit completo GHL — mapping di ogni pipeline, automation, funnel entry",
           "benefit": "Visione chiara di tutto ciò che esiste — base per ogni intervento successivo"
         },
         {
@@ -49,16 +49,20 @@
       "title": "Custom Dashboard & Ottimizzazione Funnel",
       "items": [
         {
-          "activity": "Custom dashboard live: lead per source, show rate, conversione per closer, revenue vs. target",
-          "benefit": "Nicola apre una schermata e vede tutto — nessun foglio, nessun tool aggiuntivo"
+          "activity": "Overview live: lead totali, call prenotate, show rate, deal chiusi, revenue — con visualizzazione del funnel e trend settimanale",
+          "benefit": "Nicola apre una schermata e vede tutto in tempo reale — nessun foglio, nessun tool aggiuntivo"
         },
         {
-          "activity": "View dedicata per il team commerciale con KPI individuali",
-          "benefit": "Ogni closer vede le proprie performance — accountability senza micromanagement"
+          "activity": "Funnel breakdown: performance per ogni funnel attivo (Quiz, Guida, VSL, Masterclass) con metriche di conversione per fase",
+          "benefit": "Capire quale funnel porta i lead migliori — dove si perdono e dove intervenire"
         },
         {
-          "activity": "Funnel review con spunti di ottimizzazione sui 3 VSL attivi + quiz funnel",
-          "benefit": "Raccomandazioni concrete su sequenze e follow-up — dove i lead si perdono e come recuperarli"
+          "activity": "Sources view: lead per fonte nel tempo (Meta Ads, Instagram Organic, WhatsApp) con revenue associata per canale",
+          "benefit": "Budget Meta allocato sui canali che effettivamente convertono — CPL reale per ogni source"
+        },
+        {
+          "activity": "Sales view: deal chiusi, revenue settimanale, deal size medio — KPI individuali per il team commerciale",
+          "benefit": "Ogni closer vede le proprie performance aggiornate — accountability senza micromanagement"
         }
       ]
     },
