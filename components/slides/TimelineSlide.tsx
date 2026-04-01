@@ -40,6 +40,18 @@ export default function TimelineSlide({ data }: Props) {
               <div className="step-text" style={{ marginTop: "8px" }}>
                 {phase.phase}
               </div>
+              {phase.description && (
+                <div
+                  style={{
+                    fontSize: "12px",
+                    color: "#555",
+                    marginTop: "6px",
+                    lineHeight: "1.5",
+                  }}
+                >
+                  {phase.description}
+                </div>
+              )}
               <div
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",

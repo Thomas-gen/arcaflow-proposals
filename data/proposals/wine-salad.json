@@ -70,7 +70,7 @@
       "title": "WhatsApp / SMS Agent",
       "items": [
         {
-          "activity": "AI agent WhatsApp/SMS (Eric/Raul) — qualifica i lead dopo il primo messaggio, 24/7",
+          "activity": "AI agent WhatsApp/SMS — qualifica i lead dopo il primo messaggio, 24/7",
           "benefit": "I lead vengono gestiti anche alle 23:00 dopo un lancio — i setter trovano solo contatti caldi"
         },
         {
@@ -85,25 +85,48 @@
     }
   ],
   "timeline": [
-    { "phase": "Parti 1 & 2: GHL Infrastructure + Dashboard", "duration": "6–8 settimane" },
-    { "phase": "Parte 3: WhatsApp / SMS Agent", "duration": "3–4 settimane" },
+    {
+      "phase": "Fase 1 — GHL & Dashboard",
+      "duration": "6–8 settimane",
+      "description": "Audit e pulizia GHL, ristrutturazione pipeline, sync automatico con Google Sheets, dashboard live con tutte le 4 view"
+    },
+    {
+      "phase": "Fase 2 — WhatsApp/SMS Agent",
+      "duration": "3–4 settimane",
+      "description": "Sviluppo e testing dell'AI agent, integrazione con la pipeline GHL, go-live con supervisione attiva"
+    },
     { "phase": "Totale (Go-Live)", "duration": "~ 3 mesi" }
+  ],
+  "team": [
+    {
+      "role": "CMO & Strategia",
+      "name": "Thomas",
+      "description": "Supervisione dell'engagement, direzione strategica, ottimizzazione funnel e processi commerciali. Il punto di riferimento per ogni decisione che impatta la crescita."
+    },
+    {
+      "role": "Software Developer",
+      "description": "Architettura GHL, dashboard custom, integrazioni e sync automatici. Costruisce l'infrastruttura tecnica che fa girare tutto."
+    },
+    {
+      "role": "Esperto Automazioni AI",
+      "description": "Sviluppo e training dell'AI agent WhatsApp/SMS, automazioni avanzate, go-live e testing. Porta l'intelligenza artificiale dentro il funnel."
+    }
   ],
   "bonuses": [
     {
       "bonus": "Sales Process Review",
-      "detail": "Analisi del processo commerciale: script di vendita, materiali di training, raccomandazioni su dove il processo si rompe senza Nicola. Deliverable consulenziale incluso."
-    },
-    {
-      "bonus": "Ottimizzazione post-go-live (14 giorni)",
-      "detail": "Monitoraggio attivo nelle prime 2 settimane dall'attivazione dell'agent — aggiustamenti in tempo reale"
-    },
-    {
-      "bonus": "Partner Rate",
-      "detail": "Tariffa riservata per questo progetto — sconto applicato sul prezzo di listino"
+      "detail": "Un'analisi consulenziale del processo commerciale — consegnata come documento scritto a fine progetto.",
+      "detail_items": [
+        "Analisi degli script di vendita attuali e dei messaggi di follow-up",
+        "Revisione dei materiali di training per i closer",
+        "Identificazione dei punti di rottura nel processo senza Nicola",
+        "Raccomandazioni scritte su come renderlo scalabile e replicabile",
+        "Deliverable consulenziale completo — pronto da usare con il team"
+      ]
     }
   ],
   "final_total": "",
+  "bonus_tagline": "Un processo di vendita che funziona anche quando non sei tu a vendere.",
   "next_steps": [
     "Conferma — Accettazione formale della proposta e dello scope",
     "Acconto — Primo pagamento di €1.900 per avviare il progetto",

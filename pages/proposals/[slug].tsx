@@ -11,6 +11,7 @@ import SolutionSlide from "@/components/slides/SolutionSlide";
 import TimelineSlide from "@/components/slides/TimelineSlide";
 import InvestmentSlide from "@/components/slides/InvestmentSlide";
 import BonusesSlide from "@/components/slides/BonusesSlide";
+import TeamSlide from "@/components/slides/TeamSlide";
 import NextStepsSlide from "@/components/slides/NextStepsSlide";
 
 interface Props {
@@ -24,6 +25,7 @@ export default function ProposalPage({ data }: Props) {
     ...(data.approach ? [<ApproachSlide key="approach" data={data} />] : []),
     <SolutionSlide key="solution" data={data} />,
     <TimelineSlide key="timeline" data={data} />,
+    ...(data.team && data.team.length > 0 ? [<TeamSlide key="team" data={data} />] : []),
     ...(data.investment ? [<InvestmentSlide key="investment" data={data} />] : []),
     <BonusesSlide key="bonuses" data={data} />,
     <NextStepsSlide key="nextsteps" data={data} />,

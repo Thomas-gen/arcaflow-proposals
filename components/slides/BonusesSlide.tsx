@@ -39,15 +39,62 @@ export default function BonusesSlide({ data }: Props) {
           {heading}
         </h2>
 
-        {/* Bonus sticky cards */}
-        <div className={gridClass} style={{ marginBottom: "24px" }}>
-          {data.bonuses.map((b, i) => (
-            <div key={i} className={`sticky ${BONUS_COLORS[i % BONUS_COLORS.length]}`}>
-              <div className="sticky-title">✦ {b.bonus}</div>
-              <div className="sticky-text">{b.detail}</div>
+        {/* Bonus cards — single bonus gets an expanded card with bullet points */}
+        {data.bonuses.length === 1 ? (
+          <div style={{ marginBottom: "24px" }}>
+            <div
+              className={`sticky ${BONUS_COLORS[0]}`}
+              style={{ maxWidth: "100%", padding: "28px 32px" }}
+            >
+              <div className="sticky-title" style={{ fontSize: "16px", marginBottom: "12px" }}>
+                ✦ {data.bonuses[0].bonus}
+              </div>
+              <div className="sticky-text" style={{ marginBottom: data.bonuses[0].detail_items ? "14px" : "0" }}>
+                {data.bonuses[0].detail}
+              </div>
+              {data.bonuses[0].detail_items && (
+                <ul style={{ margin: "0", paddingLeft: "0", listStyle: "none" }}>
+                  {data.bonuses[0].detail_items.map((item, j) => (
+                    <li
+                      key={j}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "10px",
+                        marginBottom: "10px",
+                        fontSize: "13px",
+                        color: "#1a1a2e",
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      <span style={{ color: "#2d6a4f", fontWeight: 700, flexShrink: 0, marginTop: "1px" }}>✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-          ))}
-        </div>
+          </div>
+        ) : (
+          <div className={gridClass} style={{ marginBottom: "24px" }}>
+            {data.bonuses.map((b, i) => (
+              <div key={i} className={`sticky ${BONUS_COLORS[i % BONUS_COLORS.length]}`}>
+                <div className="sticky-title">✦ {b.bonus}</div>
+                <div className="sticky-text">{b.detail}</div>
+                {b.detail_items && (
+                  <ul style={{ margin: "8px 0 0", paddingLeft: "0", listStyle: "none" }}>
+                    {b.detail_items.map((item, j) => (
+                      <li key={j} style={{ display: "flex", gap: "8px", fontSize: "12px", marginBottom: "6px" }}>
+                        <span style={{ color: "#2d6a4f", fontWeight: 700 }}>✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Final total */}
         <div className="roi-box" style={{ marginBottom: "16px" }}>

@@ -16,6 +16,7 @@ export interface Part {
 export interface TimelinePhase {
   phase: string;
   duration: string;
+  description?: string;
 }
 
 export interface InvestmentItem {
@@ -50,6 +51,7 @@ export type Investment = InvestmentSingle | InvestmentMulti;
 export interface Bonus {
   bonus: string;
   detail: string;
+  detail_items?: string[];
 }
 
 export interface Term {
@@ -67,7 +69,14 @@ export interface Approach {
   points?: ApproachPoint[];
 }
 
+export interface TeamMember {
+  role: string;
+  name?: string;
+  description: string;
+}
+
 export interface ProposalData {
+  team?: TeamMember[];
   slug: string;
   client: string;
   company: string;
