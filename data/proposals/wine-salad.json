@@ -1,27 +1,10 @@
 {
   "slug": "wine-salad",
-  "client": "Nicola",
+  "client": "Nicola Moriconi",
   "company": "Wine Salad",
   "service": "GHL Infrastructure, Dashboard & AI Agent — Wine Salad",
   "date": "2026-04-01",
   "language": "it",
-  "approach": {
-    "body": "Wine Salad ha già tutto ciò che serve per scalare: funnel attivi, €25.000/mese su Meta, un processo di vendita che funziona quando lo gestisce Nicola.\n\nIl problema non è il traffico — è l'infrastruttura operativa che non regge la crescita. Prima costruiamo la base: GHL pulito, dati affidabili, visibilità totale. Poi aggiungiamo l'intelligenza: un AI agent che qualifica i lead 24/7 e si integra con la pipeline.\n\nIl team dedicato: Thomas (strategic lead), Paolo (software developer, dashboard), Eric/Raul (automation & AI).",
-    "points": [
-      {
-        "label": "Prima la base, poi l'automazione",
-        "description": "Automazioni costruite su una struttura caotica producono più caos. Il GHL audit e la pipeline restructure sono il prerequisito per qualsiasi layer AI efficace."
-      },
-      {
-        "label": "Visibilità prima delle ottimizzazioni",
-        "description": "Non si può ottimizzare quello che non si vede. La custom dashboard dà a Nicola e al team una visione unica su lead, appuntamenti e conversioni — in tempo reale."
-      },
-      {
-        "label": "AI che si innesta su ciò che esiste",
-        "description": "Le automazioni WhatsApp già attive diventano intelligenti. Non si costruisce da zero — si aggiunge il layer di qualifica AI su una struttura già funzionante."
-      }
-    ]
-  },
   "challenges": [
     {
       "area": "Pipeline GHL frammentata",
