@@ -62,9 +62,9 @@
   },
   "bonuses": [
     { "bonus": "Onboarding Form", "detail": "Structured intake form to capture client details before every new build — takes under 10 minutes and makes every future engagement faster" },
-    { "bonus": "Testimonial Partner Rate", "detail": "$250 discount applied in exchange for a short video testimonial once the demo is live — bringing your total to $550" }
+    { "bonus": "Testimonial Partner Rate", "detail": "$210 discount applied in exchange for a short video testimonial once the demo is live — bringing your total to $590" }
   ],
-  "final_total": "$550",
+  "final_total": "$590",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
     "Payment — Full payment upfront to begin",
@@ -73,7 +73,7 @@
   ],
   "terms": [
     { "area": "Payment", "detail": "100% upfront before project start" },
-    { "area": "Scope", "detail": "Includes: Twilio setup, Swedish number, Retell AI config, dual-track real estate prompt, unlimited revisions, training video, handoff docs. Excluded: ongoing management, additional languages/markets, CRM integration, Twilio/Retell subscription costs (billed directly to client)" },
+    { "area": "Scope", "detail": "Includes: Twilio setup, Swedish number, Retell AI config, dual-track real estate prompt, 5 revision rounds, training video, handoff docs. Excluded: ongoing management, additional languages/markets, CRM integration, Twilio/Retell subscription costs (billed directly to client)" },
     { "area": "Post-delivery support", "detail": "Bug fixes included for 7 days post-handoff. Change requests after final handoff quoted separately" },
     { "area": "Testimonial", "detail": "The $250 discount is conditional on a short video testimonial (1–2 min) within 14 days of delivery" },
     { "area": "Ownership", "detail": "All systems delivered are client property. Arcaflow retains no ongoing access after handoff unless on retainer" }
