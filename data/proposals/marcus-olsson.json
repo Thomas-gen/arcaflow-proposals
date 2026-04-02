@@ -67,12 +67,12 @@
   "final_total": "$550",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
-    "Payment — 50% upfront to begin, 50% on delivery",
+    "Payment — Full payment upfront to begin",
     "Onboarding — Complete the onboarding form (provided on confirmation) — takes under 10 minutes",
     "Kick-off — Align on script direction and Swedish number provisioning before Day 1"
   ],
   "terms": [
-    { "area": "Payment", "detail": "50% upfront, 50% on delivery" },
+    { "area": "Payment", "detail": "100% upfront before project start" },
     { "area": "Scope", "detail": "Includes: Twilio setup, Swedish number, Retell AI config, dual-track real estate prompt, unlimited revisions, training video, handoff docs. Excluded: ongoing management, additional languages/markets, CRM integration, Twilio/Retell subscription costs (billed directly to client)" },
     { "area": "Post-delivery support", "detail": "Bug fixes included for 7 days post-handoff. Change requests after final handoff quoted separately" },
     { "area": "Testimonial", "detail": "The $250 discount is conditional on a short video testimonial (1–2 min) within 14 days of delivery" },
