@@ -48,7 +48,7 @@
     { "phase": "Part 1: Infrastructure Setup", "duration": "1–2 days" },
     { "phase": "Part 2: Agent Configuration", "duration": "2–3 days" },
     { "phase": "Part 3: Refinement & Handoff", "duration": "2–3 days" },
-    { "phase": "Total (Demo Live)", "duration": "~ 5–7 business days" }
+    { "phase": "Total (Demo Live)", "duration": "~ 10–12 business days" }
   ],
   "investment": {
     "type": "single",
