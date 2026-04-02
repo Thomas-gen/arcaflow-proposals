@@ -1,0 +1,82 @@
+{
+  "slug": "marcus-olsson",
+  "client": "Marcus Olsson",
+  "company": "Marcus Olsson",
+  "service": "AI Voice Agent Demo — Swedish Real Estate",
+  "date": "2026-04-02",
+  "language": "en",
+  "challenges": [
+    { "area": "No live demo", "impact": "Without something tangible, conversations stall before they even begin — no demo, no deals" },
+    { "area": "Generic demos don't resonate", "impact": "Realtors need to hear a voice agent that speaks their language and handles their specific context" },
+    { "area": "Buyer + seller coverage", "impact": "A one-sided script limits your pitching flexibility — you need to show the full picture" },
+    { "area": "No way to adapt for new prospects", "impact": "Rebuilding from scratch for every pitch wastes time and slows your market testing" }
+  ],
+  "approach": {
+    "body": "You're in market validation mode — which means speed and credibility matter more than perfection right now. The goal of this build isn't just a working demo; it's a sales weapon you can walk into any realtor meeting with and immediately show.\n\nBuilt on real infrastructure (Twilio + Retell AI), with a Swedish number and a script that handles both buyer and seller scenarios, this demo will look and sound like a finished product — because it is."
+  },
+  "parts": [
+    {
+      "title": "Part 1 — Infrastructure Setup",
+      "items": [
+        { "activity": "Twilio account setup and Swedish phone number provisioning (+46)", "benefit": "A real Swedish number realtors can call directly — no workarounds" },
+        { "activity": "Retell AI platform configuration and account setup", "benefit": "Production-grade voice AI infrastructure, not a prototype" },
+        { "activity": "Twilio ↔ Retell AI integration and call routing", "benefit": "Calls connect instantly and reliably — no lag during your pitch" },
+        { "activity": "End-to-end connectivity test before agent build begins", "benefit": "Confirms the infrastructure works before we put content on top" }
+      ]
+    },
+    {
+      "title": "Part 2 — Agent Configuration",
+      "items": [
+        { "activity": "Custom prompt built specifically for Swedish real estate", "benefit": "The agent understands property terminology, local market context, and realtor workflows" },
+        { "activity": "Dual-track script: buyer enquiry flow + seller listing flow", "benefit": "Covers both the most common call types — shows realtors the full range" },
+        { "activity": "Tone and language calibration (natural Swedish phrasing)", "benefit": "The agent sounds like it belongs in the Swedish market, not a translated script" },
+        { "activity": "Handling common objections and off-topic questions", "benefit": "The agent stays professional and on-script even when callers go off-piste" },
+        { "activity": "Internal QA testing across both call scenarios", "benefit": "Every flow tested by us before you ever show it to a prospect" }
+      ]
+    },
+    {
+      "title": "Part 3 — Refinement & Handoff",
+      "items": [
+        { "activity": "Unlimited revisions until you're satisfied", "benefit": "You pitch with confidence — we keep adjusting until it's exactly right" },
+        { "activity": "Structured revision rounds (feedback → update → retest)", "benefit": "Changes applied cleanly and tested after each round — no regression" },
+        { "activity": "Loom training video: how to update the prompt yourself", "benefit": "Tweak the script for different prospect types without needing us every time" },
+        { "activity": "Full handoff documentation (platform access, call flow diagram)", "benefit": "Everything you need to demo, explain, and manage the system independently" }
+      ]
+    }
+  ],
+  "timeline": [
+    { "phase": "Part 1: Infrastructure Setup", "duration": "1–2 days" },
+    { "phase": "Part 2: Agent Configuration", "duration": "2–3 days" },
+    { "phase": "Part 3: Refinement & Handoff", "duration": "2–3 days" },
+    { "phase": "Total (Demo Live)", "duration": "~ 5–7 business days" }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "$800",
+    "roi_framing": "A demo built on real infrastructure that you can walk into a realtor meeting with tomorrow — pays for itself the moment you close your first client.",
+    "items": [
+      { "deliverable": "Part 1: Infrastructure Setup", "price": null },
+      { "deliverable": "Part 2: Agent Configuration", "price": null },
+      { "deliverable": "Part 3: Refinement & Handoff", "price": null }
+    ]
+  },
+  "bonuses": [
+    { "bonus": "Onboarding Form", "detail": "Structured intake form to capture client details before every new build — takes under 10 minutes and makes every future engagement faster" },
+    { "bonus": "Testimonial Partner Rate", "detail": "$250 discount applied in exchange for a short video testimonial once the demo is live — bringing your total to $550" }
+  ],
+  "final_total": "$550",
+  "next_steps": [
+    "Confirm — Formal acceptance of this proposal and scope",
+    "Payment — 50% upfront to begin, 50% on delivery",
+    "Onboarding — Complete the onboarding form (provided on confirmation) — takes under 10 minutes",
+    "Kick-off — Align on script direction and Swedish number provisioning before Day 1"
+  ],
+  "terms": [
+    { "area": "Payment", "detail": "50% upfront, 50% on delivery" },
+    { "area": "Scope", "detail": "Includes: Twilio setup, Swedish number, Retell AI config, dual-track real estate prompt, unlimited revisions, training video, handoff docs. Excluded: ongoing management, additional languages/markets, CRM integration, Twilio/Retell subscription costs (billed directly to client)" },
+    { "area": "Post-delivery support", "detail": "Bug fixes included for 7 days post-handoff. Change requests after final handoff quoted separately" },
+    { "area": "Testimonial", "detail": "The $250 discount is conditional on a short video testimonial (1–2 min) within 14 days of delivery" },
+    { "area": "Ownership", "detail": "All systems delivered are client property. Arcaflow retains no ongoing access after handoff unless on retainer" }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
