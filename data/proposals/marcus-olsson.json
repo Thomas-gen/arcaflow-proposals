@@ -52,7 +52,7 @@
   ],
   "investment": {
     "type": "single",
-    "total": "$800",
+    "total": "To be confirmed",
     "roi_framing": "A demo built on real infrastructure that you can walk into a realtor meeting with tomorrow — pays for itself the moment you close your first client.",
     "items": [
       { "deliverable": "Part 1: Infrastructure Setup", "price": null },
@@ -62,9 +62,9 @@
   },
   "bonuses": [
     { "bonus": "Onboarding Form", "detail": "Structured intake form to capture client details before every new build — takes under 10 minutes and makes every future engagement faster" },
-    { "bonus": "Testimonial Partner Rate", "detail": "$210 discount applied in exchange for a short video testimonial once the demo is live — bringing your total to $590" }
+    { "bonus": "Testimonial Partner Rate", "detail": "Discount applied in exchange for a short video testimonial once the demo is live" }
   ],
-  "final_total": "$590",
+  "final_total": "To be confirmed",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
     "Payment — Full payment upfront to begin",
