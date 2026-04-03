@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arcaflow AI — AIOS Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --brand: #e51551;
+      --positive: #4ade80;
+      --border: #2a2a2a;
+      --text: #e5e7eb;
+      --muted: #6b7280;
+      --card: #141414;
+      --card-border: #242424;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    /* Dot grid */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Centered layout */
+    .stage {
+      position: fixed; inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 60px;
+      gap: 48px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    h1 span {
+      color: var(--positive);
+    }
+
+    /* Flow row */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* Step card */
+    .step {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .step:hover {
+      border-color: #3a3a3a;
+      transform: translateY(-3px);
+    }
+
+    .step-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--brand);
+    }
+
+    .step-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .step-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Outcome pill at bottom of last card */
+    .outcome {
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(74, 222, 128, 0.08);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      border-radius: 100px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--positive);
+    }
+
+    /* Command pill — shown on relevant steps */
+    .command {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(229, 21, 81, 0.08);
+      border: 1px solid rgba(229, 21, 81, 0.2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--brand);
+    }
+
+    /* Arrow between steps */
+    .arrow {
+      flex-shrink: 0;
+      width: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3a3a3a;
+      font-size: 18px;
+      position: relative;
+    }
+
+    .arrow::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 1px;
+      background: linear-gradient(to right, #2a2a2a, #3a3a3a);
+    }
+
+    .arrow svg {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Bottom note */
+    .note {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      color: #4b5563;
+      text-align: center;
+    }
+
+    .note strong {
+      color: var(--positive);
+    }
+
+    /* Arcaflow logo / watermark */
+    .brand-mark {
+      position: fixed;
+      bottom: 24px;
+      right: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #2a2a2a;
+      z-index: 10;
+    }
+
+    /* Tool tags on step cards */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #1e1e1e;
+      border: 1px solid #2e2e2e;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+<div class="stage">
+
+  <div class="header">
+    <div class="eyebrow">Arcaflow AI — AIOS</div>
+    <h1>From discovery call to <span>live AI agent</span><br>in one seamless flow</h1>
+  </div>
+
+  <div class="flow">
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-number">01</div>
+      <div class="step-icon">📞</div>
+      <div class="step-title">Discovery Call</div>
+      <div class="step-desc">Meet the client. Fathom records and transcribes the full call automatically — no notes needed.</div>
+      <div class="tags">
+        <span class="tag">Fathom AI</span>
+        <span class="tag">Auto-transcribed</span>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-number">02</div>
+      <div class="step-icon">🤖</div>
+      <div class="step-title">Generate Proposal</div>
+      <div class="step-desc">Tell Claude the client name. It fetches the transcript, extracts pain points, writes and deploys the proposal in under 30 seconds.</div>
+      <div class="command">/ proposal [client]</div>
+    </div>
+
+    <div class="arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-number">03</div>
+      <div class="step-icon">✍️</div>
+      <div class="step-title">Client Signs</div>
+      <div class="step-desc">They receive a beautiful interactive deck. Once they say yes, you send the onboarding form — takes them 5 minutes.</div>
+      <div class="tags">
+        <span class="tag">Vercel deck</span>
+        <span class="tag">Tally form</span>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <div class="step-number">04</div>
+      <div class="step-icon">📋</div>
+      <div class="step-title">Form Submitted</div>
+      <div class="step-desc">Client fills the onboarding form with their business details, FAQs, qualifying questions, and voice preferences.</div>
+      <div class="tags">
+        <span class="tag">Business info</span>
+        <span class="tag">3 qualifiers</span>
+        <span class="tag">Voice tone</span>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step">
+      <div class="step-number">05</div>
+      <div class="step-icon">⚡</div>
+      <div class="step-title">Agent Goes Live</div>
+      <div class="step-desc">Claude reads the form, generates a custom AI prompt, and creates the voice agent in Retell AI automatically.</div>
+      <div class="outcome">✓ Telegram ping + agent live</div>
+    </div>
+
+  </div>
+
+  <div class="note">No manual setup. No copying and pasting. <strong>You just tell Claude what to do.</strong></div>
+
+</div>
+
+<div class="brand-mark">Arcaflow AI</div>
+
+</body>
+</html>
