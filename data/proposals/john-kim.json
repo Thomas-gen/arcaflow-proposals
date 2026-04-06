@@ -1,0 +1,188 @@
+{
+  "slug": "john-kim",
+  "client": "John Kim",
+  "company": "JSK Advisory",
+  "service": "LinkedIn AIOS — Automated Lead Generation System",
+  "date": "2026-04-06",
+  "language": "en",
+  "challenges": [
+    {
+      "area": "No LinkedIn Output",
+      "impact": "15+ years of accounting and B2B expertise sits invisible online — while competitors build authority every day"
+    },
+    {
+      "area": "Content Creation Takes Hours",
+      "impact": "Writing always loses to client work; the posting never happens consistently"
+    },
+    {
+      "area": "Local AIOS = Offline AIOS",
+      "impact": "System stops the moment your laptop closes — no posting, no research, no lead generation overnight"
+    },
+    {
+      "area": "No Content Intelligence Loop",
+      "impact": "No system to capture insights from meetings or monitor what competitors are posting and winning with"
+    }
+  ],
+  "approach": {
+    "body": "John's edge isn't generic business advice — it's deep insider knowledge of accounting and property, built across MYOB, JLL, and Yardi. That expertise is the asset. The problem is distribution: it's locked in your head and your meetings instead of reaching accounting firm owners on LinkedIn every day.\n\nThe LinkedIn AIOS solves this by turning your existing infrastructure — your AIOS, your meeting notetaker, and your AAA Hub content pillars — into a machine that publishes while you sleep. Running 24/7 on a VPS, it monitors competitor posts for positioning intelligence, pulls insights from your own client conversations, and generates content aligned with your voice and niche.",
+    "points": [
+      {
+        "label": "Your Existing AIOS",
+        "description": "Extended, not replaced — everything you've built stays and gets supercharged"
+      },
+      {
+        "label": "Meeting Notetaker",
+        "description": "Client conversations automatically converted into content ideas and drafts"
+      },
+      {
+        "label": "Competitor Intelligence",
+        "description": "Track what accounting firm owners engage with — post what lands"
+      },
+      {
+        "label": "AAA Hub Pillars",
+        "description": "Your content strategy drives the engine — consistent voice, not generic AI"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "title": "Part 1 — Infrastructure & AIOS Integration",
+      "items": [
+        {
+          "activity": "VPS provisioning and configuration",
+          "benefit": "System runs 24/7 — posts, researches, and monitors whether your laptop is on or not"
+        },
+        {
+          "activity": "Connect to your existing AIOS and tools",
+          "benefit": "No rebuilding from scratch — your current setup is extended, not replaced"
+        },
+        {
+          "activity": "Meeting notetaker integration",
+          "benefit": "Insights from client and prospect conversations automatically feed the content engine"
+        },
+        {
+          "activity": "Competitor monitoring feed setup",
+          "benefit": "Track what accounting and B2B advisory accounts post — use it for positioning and inspiration"
+        }
+      ]
+    },
+    {
+      "title": "Part 2 — Content Intelligence Engine",
+      "items": [
+        {
+          "activity": "Claude Code content agent trained on your AAA Hub pillars",
+          "benefit": "Generates posts in your voice, anchored to your content strategy — not generic AI output"
+        },
+        {
+          "activity": "Content generation from meeting notes",
+          "benefit": "Your best ideas come from client conversations; this captures and converts them automatically"
+        },
+        {
+          "activity": "Competitor post analysis",
+          "benefit": "Surfaces what's resonating in your niche so you post what accounting firm owners actually engage with"
+        },
+        {
+          "activity": "Content queue with review layer",
+          "benefit": "Draft posts queued for your approval before publish — you stay in control of what goes live"
+        }
+      ]
+    },
+    {
+      "title": "Part 3 — Autonomous Publishing Pipeline",
+      "items": [
+        {
+          "activity": "Zernio API integration for auto-posting",
+          "benefit": "Posts go live on schedule without manual action — consistent output even on your busiest days"
+        },
+        {
+          "activity": "Publishing schedule configuration",
+          "benefit": "Frequency and timing optimised for accounting firm owners in the Australian market"
+        },
+        {
+          "activity": "End-to-end testing and QA",
+          "benefit": "Full run-through before handoff — every link in the chain verified live"
+        },
+        {
+          "activity": "Handoff documentation and training session",
+          "benefit": "You know exactly how the system works and how to adjust it as your strategy evolves"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "phase": "Part 1: Infrastructure & AIOS Integration",
+      "duration": "1 week"
+    },
+    {
+      "phase": "Part 2: Content Intelligence Engine",
+      "duration": "1–2 weeks"
+    },
+    {
+      "phase": "Part 3: Autonomous Publishing Pipeline",
+      "duration": "3–5 days"
+    },
+    {
+      "phase": "Total (Go-Live)",
+      "duration": "~ 3–4 weeks"
+    }
+  ],
+  "investment": {
+    "type": "single",
+    "total": "$[PRICE]",
+    "roi_framing": "A single closed client from LinkedIn typically covers the build cost in full — everything after that is pure ROI.",
+    "items": [
+      { "deliverable": "Part 1: Infrastructure & AIOS Integration", "price": null },
+      { "deliverable": "Part 2: Content Intelligence Engine", "price": null },
+      { "deliverable": "Part 3: Autonomous Publishing Pipeline", "price": null }
+    ]
+  },
+  "bonuses": [
+    {
+      "bonus": "AI Visual Content (fal.ai / Canva MCP)",
+      "detail": "Image generation integrated into the content pipeline — posts with visuals consistently outperform text-only"
+    },
+    {
+      "bonus": "Live Performance Dashboard",
+      "detail": "Custom Vercel dashboard tracking reach, engagement, and lead signals — see exactly what's working"
+    },
+    {
+      "bonus": "Resell Training Package",
+      "detail": "Step-by-step guide to package and sell this system to your accounting firm clients, including a proposal generator — turn your AIOS into a productised offer"
+    },
+    {
+      "bonus": "AAA Hub Partner Rate",
+      "detail": "Preferential rate applied as a fellow AAA Hub member"
+    }
+  ],
+  "final_total": "$[FINAL PRICE]",
+  "next_steps": [
+    "Confirm — Formal acceptance of this proposal and scope",
+    "Payment — 50% deposit to begin, 50% on delivery",
+    "Onboarding — Share VPS credentials, existing AIOS setup, and notetaker access so we can begin Day 1",
+    "Kick-off call — 30-minute alignment call to lock in content pillars, posting schedule, and go-live target"
+  ],
+  "terms": [
+    {
+      "area": "Payment",
+      "detail": "50% upfront, 50% on delivery"
+    },
+    {
+      "area": "Scope",
+      "detail": "LinkedIn AIOS build across VPS, Claude Code content agent, Zernio publishing pipeline, and AIOS integrations as described. Excluded: ongoing content management, paid advertising, graphic design; third-party API and VPS costs at client's expense"
+    },
+    {
+      "area": "Post-delivery support",
+      "detail": "Bug fixes included for 14 days post-delivery (up to 3 revisions). Change requests outside agreed scope quoted separately."
+    },
+    {
+      "area": "Ownership",
+      "detail": "All systems delivered are client property. Arcaflow retains no ongoing access after handoff unless on retainer."
+    },
+    {
+      "area": "Prerequisites",
+      "detail": "Client must provide access to VPS, existing AIOS setup, and notetaker before project start. Missing access delays the start date."
+    }
+  ],
+  "contact": "Thomas Filippa | Arcaflow AI | thomas@arcaflow.ai"
+}
