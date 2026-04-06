@@ -70,20 +70,20 @@
       "title": "Part 2 — Content Intelligence Engine",
       "items": [
         {
-          "activity": "Claude Code content agent trained on your AAA Hub pillars",
-          "benefit": "Generates posts in your voice, anchored to your content strategy — not generic AI output"
+          "activity": "Content brief generation",
+          "benefit": "System synthesises meeting notes and competitor signals into post briefs — raw intelligence turned into actionable ideas"
         },
         {
-          "activity": "Content generation from meeting notes",
-          "benefit": "Your best ideas come from client conversations; this captures and converts them automatically"
+          "activity": "Claude Code content agent (trained on your AAA Hub pillars)",
+          "benefit": "Takes each brief and writes a full post draft in your voice — not generic AI, anchored to your exact content strategy"
         },
         {
-          "activity": "Competitor post analysis",
-          "benefit": "Surfaces what's resonating in your niche so you post what accounting firm owners actually engage with"
+          "activity": "Draft scoring and filtering",
+          "benefit": "Quality pass before anything reaches your queue — only the strongest drafts surface"
         },
         {
-          "activity": "Content queue with review layer",
-          "benefit": "Draft posts queued for your approval before publish — you stay in control of what goes live"
+          "activity": "Review queue and approval layer",
+          "benefit": "You approve before anything publishes; approved posts flow automatically into the publishing pipeline"
         }
       ]
     },
@@ -127,16 +127,6 @@
       "duration": "~ 3–4 weeks"
     }
   ],
-  "investment": {
-    "type": "single",
-    "total": "$[PRICE]",
-    "roi_framing": "A single closed client from LinkedIn typically covers the build cost in full — everything after that is pure ROI.",
-    "items": [
-      { "deliverable": "Part 1: Infrastructure & AIOS Integration", "price": null },
-      { "deliverable": "Part 2: Content Intelligence Engine", "price": null },
-      { "deliverable": "Part 3: Autonomous Publishing Pipeline", "price": null }
-    ]
-  },
   "bonuses": [
     {
       "bonus": "AI Visual Content (fal.ai / Canva MCP)",
@@ -155,7 +145,6 @@
       "detail": "Preferential rate applied as a fellow AAA Hub member"
     }
   ],
-  "final_total": "$[FINAL PRICE]",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
     "Payment — 50% deposit to begin, 50% on delivery",
