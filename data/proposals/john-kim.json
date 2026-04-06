@@ -145,6 +145,14 @@
       "detail": "Preferential rate applied as a fellow AAA Hub member"
     }
   ],
+  "profit_calculator": {
+    "client_value": 2000,
+    "months": [
+      { "month": "Month 1", "clients_min": 1, "clients_max": 2 },
+      { "month": "Month 2", "clients_min": 2, "clients_max": 3 },
+      { "month": "Month 3", "clients_min": 3, "clients_max": 4 }
+    ]
+  },
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
     "Payment — 50% deposit to begin, 50% on delivery",

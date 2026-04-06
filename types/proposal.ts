@@ -75,7 +75,19 @@ export interface TeamMember {
   description: string;
 }
 
+export interface ProfitMonth {
+  month: string;
+  clients_min: number;
+  clients_max: number;
+}
+
+export interface ProfitCalculator {
+  client_value: number;
+  months: ProfitMonth[];
+}
+
 export interface ProposalData {
+  profit_calculator?: ProfitCalculator;
   team?: TeamMember[];
   slug: string;
   client: string;

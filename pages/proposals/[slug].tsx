@@ -13,6 +13,7 @@ import InvestmentSlide from "@/components/slides/InvestmentSlide";
 import BonusesSlide from "@/components/slides/BonusesSlide";
 import TeamSlide from "@/components/slides/TeamSlide";
 import NextStepsSlide from "@/components/slides/NextStepsSlide";
+import ProfitCalculatorSlide from "@/components/slides/ProfitCalculatorSlide";
 
 interface Props {
   data: ProposalData;
@@ -28,6 +29,7 @@ export default function ProposalPage({ data }: Props) {
     ...(data.team && data.team.length > 0 ? [<TeamSlide key="team" data={data} />] : []),
     ...(data.investment ? [<InvestmentSlide key="investment" data={data} />] : []),
     <BonusesSlide key="bonuses" data={data} />,
+    ...(data.profit_calculator ? [<ProfitCalculatorSlide key="profit" data={data} />] : []),
     <NextStepsSlide key="nextsteps" data={data} />,
   ];
 
