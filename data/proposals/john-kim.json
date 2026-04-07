@@ -144,6 +144,14 @@
       "detail": "After go-live, we monitor performance and tune the system for 2 weeks at no extra cost"
     }
   ],
+  "profit_calculator": {
+    "client_value": 3000,
+    "months": [
+      { "month": "Month 1", "clients_min": 1, "clients_max": 2 },
+      { "month": "Month 2", "clients_min": 2, "clients_max": 3 },
+      { "month": "Month 3", "clients_min": 3, "clients_max": 5 }
+    ]
+  },
   "final_total": "$2,400",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
