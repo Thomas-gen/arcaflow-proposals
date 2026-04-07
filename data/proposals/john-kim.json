@@ -5,24 +5,6 @@
   "service": "LinkedIn AIOS — Automated Lead Generation System",
   "date": "2026-04-06",
   "language": "en",
-  "challenges": [
-    {
-      "area": "No LinkedIn Output",
-      "impact": "15+ years of accounting and B2B expertise sits invisible online — while competitors build authority every day"
-    },
-    {
-      "area": "Content Creation Takes Hours",
-      "impact": "Writing always loses to client work; the posting never happens consistently"
-    },
-    {
-      "area": "Local AIOS = Offline AIOS",
-      "impact": "System stops the moment your laptop closes — no posting, no research, no lead generation overnight"
-    },
-    {
-      "area": "No Content Intelligence Loop",
-      "impact": "No system to capture insights from meetings or monitor what competitors are posting and winning with"
-    }
-  ],
   "approach": {
     "body": "John's edge isn't generic business advice — it's deep insider knowledge of accounting and property, built across MYOB, JLL, and Yardi. That expertise is the asset. The problem is distribution: it's locked in your head and your meetings instead of reaching accounting firm owners on LinkedIn every day.\n\nThe LinkedIn AIOS solves this by turning your existing infrastructure — your AIOS, your meeting notetaker, and your AAA Hub content pillars — into a machine that publishes while you sleep. Running 24/7 on a VPS, it monitors competitor posts for positioning intelligence, pulls insights from your own client conversations, and generates content aligned with your voice and niche.",
     "points": [
@@ -44,6 +26,24 @@
       }
     ]
   },
+  "challenges": [
+    {
+      "area": "No LinkedIn Output",
+      "impact": "15+ years of accounting and B2B expertise sits invisible online — while competitors build authority every day"
+    },
+    {
+      "area": "Content Creation Takes Hours",
+      "impact": "Writing always loses to client work; the posting never happens consistently"
+    },
+    {
+      "area": "Local AIOS = Offline AIOS",
+      "impact": "System stops the moment your laptop closes — no posting, no research, no lead generation overnight"
+    },
+    {
+      "area": "No Content Intelligence Loop",
+      "impact": "No system to capture insights from meetings or monitor what competitors are posting and winning with"
+    }
+  ],
   "parts": [
     {
       "title": "Part 1 — Infrastructure & AIOS Integration",
@@ -110,22 +110,10 @@
     }
   ],
   "timeline": [
-    {
-      "phase": "Part 1: Infrastructure & AIOS Integration",
-      "duration": "1 week"
-    },
-    {
-      "phase": "Part 2: Content Intelligence Engine",
-      "duration": "1–2 weeks"
-    },
-    {
-      "phase": "Part 3: Autonomous Publishing Pipeline",
-      "duration": "3–5 days"
-    },
-    {
-      "phase": "Total (Go-Live)",
-      "duration": "~ 3–4 weeks"
-    }
+    { "phase": "Part 1: Infrastructure & AIOS Integration", "duration": "1 week" },
+    { "phase": "Part 2: Content Intelligence Engine", "duration": "1–2 weeks" },
+    { "phase": "Part 3: Autonomous Publishing Pipeline", "duration": "3–5 days" },
+    { "phase": "Total (Go-Live)", "duration": "~ 3–4 weeks" }
   ],
   "investment": {
     "type": "single",
@@ -133,9 +121,9 @@
     "original_total": "$3,000",
     "roi_framing": "Discounted from $3,000 in exchange for a short video review after delivery.",
     "items": [
-      { "deliverable": "Part 1 — Infrastructure & AIOS Integration", "price": null },
-      { "deliverable": "Part 2 — Content Intelligence Engine", "price": null },
-      { "deliverable": "Part 3 — Autonomous Publishing Pipeline", "price": null }
+      { "deliverable": "Part 1: Infrastructure & AIOS Integration", "price": null },
+      { "deliverable": "Part 2: Content Intelligence Engine", "price": null },
+      { "deliverable": "Part 3: Autonomous Publishing Pipeline", "price": null }
     ]
   },
   "bonuses": [
@@ -149,21 +137,13 @@
     },
     {
       "bonus": "Resell Training Package",
-      "detail": "Step-by-step guide to package and sell this system to your accounting firm clients, including a proposal generator — turn your AIOS into a productised offer"
+      "detail": "Step-by-step guide to package and sell this system to your accounting firm clients — turn your AIOS into a productised offer"
     },
     {
       "bonus": "2 Weeks Free Optimisation",
       "detail": "After go-live, we monitor performance and tune the system for 2 weeks at no extra cost"
     }
   ],
-  "profit_calculator": {
-    "client_value": 2000,
-    "months": [
-      { "month": "Month 1", "clients_min": 1, "clients_max": 2 },
-      { "month": "Month 2", "clients_min": 2, "clients_max": 3 },
-      { "month": "Month 3", "clients_min": 3, "clients_max": 4 }
-    ]
-  },
   "final_total": "$2,400",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
