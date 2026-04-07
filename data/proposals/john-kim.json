@@ -130,6 +130,7 @@
   "investment": {
     "type": "single",
     "total": "$2,400",
+    "original_total": "$3,000",
     "roi_framing": "Discounted from $3,000 in exchange for a short video review after delivery.",
     "items": [
       { "deliverable": "Part 1 — Infrastructure & AIOS Integration", "price": null },
@@ -163,6 +164,7 @@
       { "month": "Month 3", "clients_min": 3, "clients_max": 4 }
     ]
   },
+  "final_total": "$2,400",
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
     "Payment — 70% deposit ($1,680) to begin: https://buy.stripe.com/7sYbJ0gUy3mRazb8VkeUU0O",
