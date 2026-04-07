@@ -127,6 +127,16 @@
       "duration": "~ 3–4 weeks"
     }
   ],
+  "investment": {
+    "type": "single",
+    "total": "$2,400",
+    "roi_framing": "Discounted from $3,000 in exchange for a short video review after delivery.",
+    "items": [
+      { "deliverable": "Part 1 — Infrastructure & AIOS Integration", "price": null },
+      { "deliverable": "Part 2 — Content Intelligence Engine", "price": null },
+      { "deliverable": "Part 3 — Autonomous Publishing Pipeline", "price": null }
+    ]
+  },
   "bonuses": [
     {
       "bonus": "AI Visual Content (fal.ai / Canva MCP)",
@@ -141,8 +151,8 @@
       "detail": "Step-by-step guide to package and sell this system to your accounting firm clients, including a proposal generator — turn your AIOS into a productised offer"
     },
     {
-      "bonus": "AAA Hub Partner Rate",
-      "detail": "Preferential rate applied as a fellow AAA Hub member"
+      "bonus": "2 Weeks Free Optimisation",
+      "detail": "After go-live, we monitor performance and tune the system for 2 weeks at no extra cost"
     }
   ],
   "profit_calculator": {
@@ -155,14 +165,14 @@
   },
   "next_steps": [
     "Confirm — Formal acceptance of this proposal and scope",
-    "Payment — 50% deposit to begin, 50% on delivery",
+    "Payment — 70% deposit ($1,680) to begin: https://buy.stripe.com/7sYbJ0gUy3mRazb8VkeUU0O",
     "Onboarding — Share VPS credentials, existing AIOS setup, and notetaker access so we can begin Day 1",
     "Kick-off call — 30-minute alignment call to lock in content pillars, posting schedule, and go-live target"
   ],
   "terms": [
     {
       "area": "Payment",
-      "detail": "50% upfront, 50% on delivery"
+      "detail": "70% upfront ($1,680), 30% on delivery ($720)"
     },
     {
       "area": "Scope",
