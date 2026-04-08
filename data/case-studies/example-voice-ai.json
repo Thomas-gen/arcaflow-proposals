@@ -1,0 +1,77 @@
+{
+  "slug": "example-voice-ai",
+  "client": "Client Name",
+  "company": "Company Name",
+  "industry": "Healthcare / Home Services",
+  "service": "AI Voice Agent + CRM Automation",
+  "headline": "400+ missed calls recovered — fully automated, no staff added",
+  "date": "2026-03-01",
+  "language": "en",
+  "problems": [
+    {
+      "area": "400+ missed calls per month",
+      "impact": "Every unanswered call is a lost booking. Staff couldn't keep up with inbound volume during peak hours."
+    },
+    {
+      "area": "Manual follow-up eating hours",
+      "impact": "Team spending 2–3 hours daily on callbacks and appointment reminders — time pulled from actual service delivery."
+    },
+    {
+      "area": "No system for after-hours leads",
+      "impact": "Calls after 6 PM went to voicemail. Leads went cold overnight and booked competitors by morning."
+    }
+  ],
+  "solutions": [
+    {
+      "title": "AI Voice Agent (24/7)",
+      "description": "Custom-trained voice agent answers every inbound call, qualifies the lead, and books appointments directly into the calendar — day or night."
+    },
+    {
+      "title": "CRM Integration & Auto-tagging",
+      "description": "Every call logged in GoHighLevel with transcript, lead score, and outcome tag. No manual data entry."
+    },
+    {
+      "title": "Automated Follow-up Sequences",
+      "description": "No-shows and unbooked leads enter a 3-touch SMS + email sequence automatically. Reactivation without lifting a finger."
+    },
+    {
+      "title": "Live Dashboard",
+      "description": "Real-time view of call volume, booking rate, and agent performance. Owner sees the business without being in it."
+    }
+  ],
+  "results": [
+    {
+      "metric": "400+",
+      "label": "calls recovered per month",
+      "positive": true
+    },
+    {
+      "metric": "23%",
+      "label": "increase in booking rate",
+      "positive": true
+    },
+    {
+      "metric": "0",
+      "label": "additional staff hired",
+      "positive": true
+    },
+    {
+      "metric": "3 weeks",
+      "label": "from kickoff to go-live",
+      "positive": true
+    },
+    {
+      "metric": "~15h",
+      "label": "per week recovered for the owner",
+      "positive": true
+    }
+  ],
+  "timeline": "3 weeks",
+  "testimonial": {
+    "quote": "I used to dread Monday mornings — a queue of missed calls to work through. Now I open the dashboard and everything's already handled. It feels like I hired someone, except it never sleeps.",
+    "author": "Client Name",
+    "role": "Owner, Company Name"
+  },
+  "cta_label": "Book a Free Strategy Call",
+  "cta_url": "https://cal.com/thomas-filippa"
+}
